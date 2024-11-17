@@ -1,0 +1,79 @@
+.delivery-page {
+	text-align: left;
+	padding-top: 55px;
+}
+@media screen and (max-width: 767px) {
+	.delivery-page {
+		padding-top: 10px;
+	}
+}
+.delivery-page .menu-right ul li,
+.delivery-page .menu-right ul {
+	display: block;
+	padding: 0;
+	margin: 0;
+}
+
+.delivery-page .coountry {
+	clear: both;
+	max-width: 600px;
+	margin: 40px auto;
+}
+
+.delivery-page .coountry .left {
+	float: left;
+	width: 40%;
+	border-top: 1px solid black;
+	margin-top: 13px;
+}
+
+.delivery-page .coountry .right {
+	float: left;
+	width: 40%;
+	border-top: 1px solid black;
+	margin-top: 13px;
+}
+
+.delivery-page .coountry .name {
+	float: left;
+	width: 20%;
+	text-align: center;
+	font: normal bold 20px Arial;
+}
+
+.delivery-page .col-md-2 {
+	text-align: center;
+}
+
+.delivery-page .title {
+	font-size: 16px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+.delivery-page .row {
+	margin-bottom: 55px;
+}
+
+.delivery-page .info span {
+	display: block;
+	margin: 15px 0 15px 20px;
+	border-left: 2px solid #34b9dd;
+	padding-left: 10px;
+}
+
+.delivery-page .menu-right ul li {
+	height: 40px;
+	background: #000000;
+	margin-bottom: 2px;
+}
+
+.delivery-page .menu-right ul li a {
+	padding: 10px;
+	color: white;
+	display: block;
+}
+
+.delivery-page .menu-right ul li a:hover {
+	text-decoration: none;
+}

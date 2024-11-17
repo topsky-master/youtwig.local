@@ -1,0 +1,102 @@
+.comment-list .thumbnail span{
+    text-align: center;
+    display: block;
+    width: 100%;
+}
+.comment-list .thumbnail span .fa.fa-user-o{
+    font-size: 48px;
+    float: none;
+    clear: both;
+    margin: 10px auto;
+}
+
+.fa-user-o:before {
+    content: "\f2c0";
+}
+
+.comment-post {
+	margin-top: 10px;
+}
+
+.comment-post p{
+	margin-bottom: 0;
+}
+
+.comment-post dt {
+	margin-bottom: 10px;
+}
+
+.comment-list .thumbnail  span{
+	display: flex;
+	align-items: center;
+	justify-content: middle;
+    width: 80px;
+	height: 80px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	margin: 10px auto;
+	overflow: hidden;
+}
+
+
+.comment-list .panel.arrow.left:before {
+    left: 0px;
+    top: 30px;
+    /*Use boarder color of panel*/
+    border-right-color: inherit;
+    border-width: 16px;
+}
+/*Background color effect*/
+.comment-list .panel.arrow.left:after {
+    left: 1px;
+    top: 31px;
+    /*Change for different outline color*/
+    border-right-color: #FFFFFF;
+    border-width: 15px;
+}
+
+.comment-list header{
+    padding: 0;
+}
+
+.comment-list .col-md-10 .user-info{
+    padding-right: 10px;
+}
+
+.comment-list .user-info .fa.fa-user{
+    font-weight: bold;
+}
+
+.comment-list div.rating{
+    display: inline;
+}
+@media (max-width: 767px) {
+
+
+	.blog-page-navigation .pagination{
+		width: 100%;
+		text-align: right;
+	}
+
+    .blog-page-navigation .pagination li{
+        width: 48%;
+		display: inline-block;
+        margin: 0 1%;
+    }
+
+    .blog-page-navigation .pagination li:last-child{
+        margin-right: 0;
+    }
+
+    .blog-page-navigation .pagination li a{
+        text-align: center;
+        width: 100%;
+        -moz-border-radius: 4px;
+        -ms-border-radius: 4px;
+        -webkit-border-radius: 4px;
+        border-radius: 4px;
+
+    }
+
+}

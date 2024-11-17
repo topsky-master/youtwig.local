@@ -1,0 +1,380 @@
+body.personal.pos_page .personal-menu-area{
+    padding-bottom: 15px;
+}
+
+body.personal.pos_page .personal-menu-area .personal-menu > .menu.list{
+    border-radius: 0;
+    padding: 0;
+    background: #fff;
+}
+
+body.personal.pos_page .personal-menu-area .personal-menu > .menu.list{
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, .15);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+}
+
+body.personal.pos_page .personal-menu-area .personal-menu > .menu.list,
+body.personal.pos_page .personal-menu-area .personal-menu > .menu.list > li,
+body.personal.pos_page .personal-menu-area .personal-menu > .menu.list > li > a{
+    display: block;
+    padding: 0;
+    margin: 0;
+}
+
+body.personal.pos_page .personal-menu-area .personal-menu > .menu.list > li > a{
+    color: #4c4c4c;
+    font-size: 14px;
+    line-height: 1.35;
+    padding: 13px 24px 11px 12px;
+    border-top: 1px solid #F0F3F5;
+    position: relative;
+    text-decoration: none;
+    outline: none;
+    overflow: hidden;
+    white-space: normal;
+}
+
+body.personal.pos_page .personal-menu-area .personal-menu > .menu.list > li:first-child > a{
+    border-top: none;
+}
+
+body.personal.pos_page .personal-menu-area .personal-menu > .menu.list > li > a.selected:hover,
+body.personal.pos_page .personal-menu-area .personal-menu > .menu.list > li > a.selected{
+    background: #15AAD2;
+    color: #fff;
+}
+
+
+body.personal.pos_page .breadcrumb-wrapper .col-lg-5{
+    height: 39px;
+    line-height: 39px;
+    vertical-align: middle;
+    text-align: right;
+    font-size: 0;
+    padding: 0;
+}
+
+body.personal.pos_page .breadcrumb-wrapper .col-lg-5 > a.personal-logout{
+    height: 39px;
+    line-height: 39px;
+    border-left: 1px solid #E8E8E8;
+    color: #202326;
+    font-size: 13px;
+    text-decoration: none;
+    padding: 0 22px;
+    display: inline-block;
+}
+
+body.personal.pos_page .personal-user{
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, .15);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    margin: 0 0 15px 0;
+    zoom: 1;
+    min-height: 1px;
+    position: relative;
+    padding: 15px 0;
+}
+
+body.personal.pos_page .personal-user:before,
+body.personal.pos_page .personal-user:after{
+    content: "";
+    display: block;
+    width: 100%;
+    float: none;
+    clear: both;
+}
+
+body.personal.pos_page .personal-menu-area{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+body.personal.pos_page .personal-menu-area .personal-icon{
+    height: 50px;
+    background: url(/bitrix/templates/nmain/images/personal-icon.png) center center no-repeat;
+}
+
+body.personal.pos_page .personal-menu-area .personal-icon + span{
+    padding-left: 0;
+}
+
+body.personal.pos_page .personal-menu-area .personal-icon + span a{
+    text-decoration: none;
+    color: #4c4c4c;
+    font-size: 14px;
+}
+
+
+body.personal.pos_page .personal-menu-area .personal-icon + span a.person-name{
+    display: block;
+    margin: 2px 0 5px 0;
+}
+
+body.personal.pos_page .personal-account-area{
+    padding-right: 0;
+}
+
+body.personal.pos_page .personal-account-area > div{
+    padding: 15px;
+    border: 1px solid #E8E8E8;
+    min-height: 350px;
+    background: #fff;
+    position: relative;
+}
+
+body.personal.pos_page .personal-menu-area .personal-menu > .menu.list > li > a.parent:before{
+    display: none;
+}
+
+body.personal.pos_page .personal-menu-area .personal-menu > .menu.list > li > a.parent{
+    color: #454545;
+    font-weight: bold;
+}
+
+
+@media screen and (max-width: 767px) {
+
+    html .personal-account-area{
+        padding-left: 0;
+    }
+
+    .personal-account .profile-table,
+    .personal-account .profile-table thead,
+    .personal-account .profile-table tbody,
+    .personal-account .profile-table th,
+    .personal-account .profile-table td,
+    .personal-account .profile-table tr,
+    .personal-account .table-orders,
+    .personal-account .table-orders thead,
+    .personal-account .table-orders tbody,
+    .personal-account .table-orders th,
+    .personal-account .table-orders td,
+    .personal-account .table-orders tr,
+    .personal-account .order-detail-table,
+    .personal-account .order-detail-table thead,
+    .personal-account .order-detail-table tbody,
+    .personal-account .order-detail-table th,
+    .personal-account .order-detail-table td,
+    .personal-account .order-detail-table tr {
+        display: block;
+        width: 100%!important;
+    }
+
+    .personal-account .profile-table td,
+    .personal-account .table-orders td,
+    .personal-account .order-detail-table td {
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+    }
+
+    .personal-account .profile-table td,
+    .personal-account .profile-table th,
+    .personal-account .table-orders td,
+    .personal-account .table-orders th,
+    .personal-account .order-detail-table td,
+    .personal-account .order-detail-table th{
+        text-align: left!important;
+    }
+
+    .personal-account .profile-table td,
+    .personal-account .profile-table th,
+    .personal-account .table-orders th,
+    .personal-account .order-detail-table th
+    .personal-account .table-orders td,
+    .personal-account .order-detail-table td{
+        empty-cells: hide;
+    }
+
+
+}
+
+@media screen and (min-width: 1200px) {
+
+    body.personal.pos_page a.personal-logout{
+        display: block;
+        text-align: right;
+        width: 100%;
+        padding-right: 15px;
+    }
+
+    body.personal.pos_page .personal-menu-area .personal-menu > .menu.list > li > a:after{
+        content: "";
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        vertical-align: bottom;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        padding-left: 10px;
+        width: 25px;
+        background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 50%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        color: #000;
+    }
+
+    body.personal.pos_page .personal-menu-area .personal-menu > .menu.list > li > a.selected:after{
+        background: linear-gradient(to right, rgba(21,170,210,0) 0%,rgba(21,170,210,1) 30%,rgba(21,170,210,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        color: #fff;
+    }
+
+    body.personal.pos_page .personal-menu-area .personal-menu > .menu.list > li > a:not(.selected):hover{
+        background: #f5f5f5; /* Old browsers */
+    }
+
+    body.personal.pos_page .personal-menu-area .personal-menu > .menu.list > li > a:not(.selected):hover:after{
+        background: linear-gradient(to right, rgba(245,245,245,0) 0%,rgba(245,245,245,1) 30%,rgba(245,245,245,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    }
+
+    body.personal.pos_page .personal-menu-area .personal-menu > .menu.list > li > a.parent:after{
+        content: "\f105";
+        font: normal normal normal 16px/42px FontAwesome;
+    }
+
+}
+
+@media screen  and (max-width: 1024px) {
+    html body.personal.pos_page .table-striped.table-bordered,
+    html body.personal.pos_page .table-striped.table-bordered tr,
+    html body.personal.pos_page .table-striped.table-bordered td,
+    html body.personal.pos_page .table-striped.table-bordered th,
+    html body.personal.pos_page .table-striped.table-bordered tfoot,
+    html body.personal.pos_page .table-striped.table-bordered thead,
+    html body.personal.pos_page .table-striped.table-bordered tbody{
+        display: block!important;
+        margin: 0!important;
+        border: none!important;
+        empty-cells: hide!important;
+        padding: 0!important;
+        width: 100%!important;
+        max-width: 100%!important;
+        line-height: 30px;
+        background: transparent!important;
+        color: #2c2c2c!important;
+    }
+
+    html body.personal.pos_page .table-striped.table-bordered tr.hidden-xs,
+    html body.personal.pos_page .table-striped.table-bordered td.bx-actions-col{
+        display: none!important;
+    }
+
+    html body.personal.pos_page .table-striped.table-bordered .btn{
+        margin-bottom: 15px;
+    }
+
+    html body.personal.pos_page .table-striped.table-bordered .btn + br{
+        display: none!important;
+    }
+
+    html body.personal.pos_page .table-striped.table-bordered div[class*="support-lamp"]{
+        position: absolute;
+        top: 8px;
+        right: 10px;
+    }
+
+    html body.personal.pos_page .table-striped.table-bordered td{
+        position: relative;
+        padding: 0!important;
+        box-sizing: border-box;
+    }
+
+    html body.personal.pos_page .table-striped.table-bordered td div.empty{
+        display: none;
+    }
+
+    html  body.personal.pos_page .table-striped.table-bordered td::after{
+        content: "";
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        right: 0;
+        display: block;
+        border-bottom: 1px solid #ccc;
+        width: 100%;
+    }
+
+    html body.personal.pos_page tr.bx-grid-footer table.bx-grid-footer td{
+        white-space: normal;
+    }
+
+    html body.personal.pos_page .profile-link h3{
+        margin: 0;
+    }
+
+    html .personal-account-area .btn,
+    html .table-support-ticket.table-bordered .btn{
+        margin-top: 7px;
+        margin-bottom: 7px;
+    }
+
+    html .personal-account-area .btn{
+        padding-left: 6px;
+        padding-right: 6px;
+    }
+
+    html .table-support-ticket.table-bordered #MESSAGE{
+        border-radius: 0;
+        display: inline-block;
+    }
+
+    html body.personal.pos_page .navigation {
+        margin-top: 15px;
+    }
+
+    html .personal-account input[type="password"],
+    html .personal-account input[type="text"],
+    html .personal-account textarea{
+        width: 100%;
+        border: 1px solid #ccc;
+        padding: 6px 12px;
+        box-sizing: border-box;
+        margin: 6px 0;
+        line-height: 1.42;
+    }
+
+    html body.personal.pos_page input[type="file"] + br{
+        display: none;
+    }
+
+    html .personal-account textarea{
+        margin-bottom: 0;
+    }
+
+    html body.personal.pos_page .btn.dropdown-toggle.selectpicker{
+        margin: 6px 0;
+    }
+
+    html body.personal.pos_page .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn){
+        width: 100%;
+    }
+
+    html body.personal.pos_page #user_div_user_properties + p{
+        margin: 15px 0;
+    }
+
+
+    html body.personal.pos_page .calendar-icon{
+        position: absolute;
+        top: 10px;
+        right: 8px;
+    }
+
+    html body.personal.pos_page .personal-menu-area .personal-icon+span{
+        padding-left: 15px;
+        width: calc(83.33333333% - 15px);
+    }
+
+    html body.personal.pos_page .personal-menu-area .personal-icon{
+        margin-left: 15px;
+    }
+
+    html .order-detail .btn{
+        margin-bottom: 15px;
+    }
+}

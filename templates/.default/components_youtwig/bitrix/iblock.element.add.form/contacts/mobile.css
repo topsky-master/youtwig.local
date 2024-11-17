@@ -1,0 +1,29 @@
+
+    .services .container-fluid .hint-area,
+    .services .container-fluid .input-label{
+        font-weight: normal;
+        color: #383838;
+        font-size: 14px;
+        padding: 0 0 9px 0;
+        cursor: pointer;
+    }
+
+    .services .container-fluid{
+        margin-bottom: 0;
+    }
+
+    .services .container-fluid .hint-area{
+        padding-top: 9px;
+    }
+
+    .services .before-text{
+        margin-bottom: 15px;
+        text-align: center;
+        font-size: 14px;
+    }
+
+    .services .all-price-list{
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+

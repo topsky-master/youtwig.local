@@ -1,0 +1,182 @@
+/**Top menu**/
+#rist-top-menu-ul,#rist-top-menu-ul ul
+{
+	
+	padding:0;
+	margin: 10px;
+	list-style:none;
+	display: inline-block;
+	/*font-size:90%*/
+}
+
+#rist-top-menu-ul
+{
+	
+}
+
+/*Links*/
+#rist-top-menu-ul a
+{
+	display:block;
+	padding:5px 10px;
+	/*padding:0.3em 0.8em;*/
+	text-decoration:none;
+	text-align:center;
+}
+
+#rist-top-menu-ul li 
+{
+	float:left;
+	text-align: center;
+}
+
+/*Root items*/
+#rist-top-menu-ul li a.root-item
+{
+	color:white;
+	font-size: 12px;
+	padding: 0px 5px;
+}
+
+/*Root menu selected*/
+#rist-top-menu-ul li a.root-item-selected
+{
+	/*background: url('/bitrix/templates/main/images/menu-bg-active.jpg') repeat-x;*/
+	color:white;
+	font-size: 12px;
+	padding: 0px 5px;
+}
+
+/*Root items: hover*/
+#rist-top-menu-ul li:hover a.root-item, #rist-top-menu-ul li.jshover a.root-item
+{
+		/*background: url('/bitrix/templates/main/images/menu-bg-active.jpg') repeat-x;*/
+		color: #2db9dd;
+}
+
+/*Item-parents*/
+#rist-top-menu-ul a.parent
+{
+	background: url(images/arrow.gif) center right no-repeat;
+}
+
+/*Denied items*/
+#rist-top-menu-ul a.denied
+{
+	background: url(images/lock.gif) center right no-repeat;
+}
+
+/*Child-items: hover*/
+#rist-top-menu-ul li:hover, #rist-top-menu-ul li.jshover
+{
+	/*background: url('/bitrix/templates/main/images/menu-bg-active.jpg') repeat-x;*/
+	color:#2db9dd;
+}
+
+/*Child-items selected*/
+#rist-top-menu-ul li.item-selected
+{
+	background:#D6D6D6;
+	color:#fff;
+}
+
+/*Sub-menu box*/
+#rist-top-menu-ul li ul
+{
+	position:absolute;
+	/*top:-999em;*/
+	top:auto;
+	display:none;
+	z-index:500;
+
+	height:auto;
+	/*width:12em;*/
+	width:135px;
+	background:#F5F5F5;
+	border:1px solid #C1C1C1;
+}
+
+/*Sub-menu item box*/
+#rist-top-menu-ul li li 
+{
+	width:100%;
+	border-bottom:1px solid #DEDEDE;
+}
+
+/*Item link*/
+#rist-top-menu-ul li ul a
+{
+	text-align:left;
+}
+
+/*Items text color & size */
+#rist-top-menu-ul li a,
+#rist-top-menu-ul li:hover li a,
+#rist-top-menu-ul li.jshover li a,
+#rist-top-menu-ul li:hover li:hover li a,
+#rist-top-menu-ul li.jshover li.jshover li a,
+#rist-top-menu-ul li:hover li:hover li:hover li a,
+#rist-top-menu-ul li.jshover li.jshover li.jshover li a,
+#rist-top-menu-ul li:hover li:hover li:hover li:hover li a,
+#rist-top-menu-ul li.jshover li.jshover li.jshover li.jshover li a,
+#rist-top-menu-ul li:hover li:hover li:hover li:hover li:hover li a,
+#rist-top-menu-ul li.jshover li.jshover li.jshover li.jshover li.jshover li a
+{
+	color: #2db9dd;
+	font-weight:bold;
+}
+
+/*Items text color & size: hover*/
+#rist-top-menu-ul li:hover li:hover a,
+#rist-top-menu-ul li.jshover li.jshover a,
+#rist-top-menu-ul li:hover li:hover li:hover a,
+#rist-top-menu-ul li.jshover li.jshover li.jshover a,
+#rist-top-menu-ul li:hover li:hover li:hover li:hover a,
+#rist-top-menu-ul li.jshover li.jshover li.jshover li.jshover a
+#rist-top-menu-ul li:hover li:hover li:hover li:hover li:hover a,
+#rist-top-menu-ul li.jshover li.jshover li.jshover li.jshover li.jshover a
+#rist-top-menu-ul li:hover li:hover li:hover li:hover li:hover li:hover a,
+#rist-top-menu-ul li.jshover li.jshover li.jshover li.jshover li.jshover li.jshover a
+{
+	color: #2db9dd;
+}
+
+#rist-top-menu-ul li ul ul
+{
+	margin:-27px 0 0 132px;
+	/*margin:-1.93em 0 0 11.6em;*/
+}
+
+#rist-top-menu-ul li:hover ul ul,
+#rist-top-menu-ul li.jshover ul ul,
+#rist-top-menu-ul li:hover ul ul ul,
+#rist-top-menu-ul li.jshover ul ul ul,
+#rist-top-menu-ul li:hover ul ul ul ul,
+#rist-top-menu-ul li.jshover ul ul ul ul,
+#rist-top-menu-ul li:hover ul ul ul ul ul,
+#rist-top-menu-ul li.jshover ul ul ul ul ul
+{
+	/*top:-999em;*/
+	display:none;
+}
+
+#rist-top-menu-ul li:hover ul,
+#rist-top-menu-ul li.jshover ul,
+#rist-top-menu-ul li li:hover ul,
+#rist-top-menu-ul li li.jshover ul,
+#rist-top-menu-ul li li li:hover ul,
+#rist-top-menu-ul li li li.jshover ul,
+#rist-top-menu-ul li li li li:hover ul,
+#rist-top-menu-ul li li li li.jshover ul,
+#rist-top-menu-ul li li li li li:hover ul,
+#rist-top-menu-ul li li li li li.jshover ul
+{
+	/*z-index:1000;
+	top:auto;*/
+	display:block;
+}
+
+div.menu-clear-left
+{
+	clear:left;
+}

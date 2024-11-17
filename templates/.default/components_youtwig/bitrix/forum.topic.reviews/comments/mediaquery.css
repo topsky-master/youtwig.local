@@ -1,0 +1,59 @@
+@media screen and (min-width:1200px){
+    .reviews-reply.container-fluid{
+        display: flex;
+        align-items: center;
+        padding: 0 10px;
+    }
+
+    .reviews-reply-fields.reviews-reply{
+        margin-bottom: 10px;
+        padding: 0;
+    }
+
+    label.fa.star{
+        margin: 8px 0 5px 0;
+    }
+}
+
+@media screen and (max-width:767px){
+
+    .reviews-reply-rating .star{
+        margin: 7px 0;
+    }
+
+    .reviews-post-table .container-fluid .col-sm-6.text-right,
+    .reviews-reply-rating.text-right{
+        text-align: left;
+    }
+
+    div.reviews-reply-field-settings label{
+        font-size: 12px;
+    }
+
+    .feed-add-post-text{
+        padding: 0!important;
+    }
+
+    .bx-html-editor{
+        min-width: 0!important;
+    }
+
+    .reviews-page-navigation .pagination{
+        width: 100%;
+    }
+
+    .reviews-page-navigation .pagination li{
+        width: 50%;
+        float: right;
+    }
+
+    .reviews-page-navigation .pagination li a{
+        width: 100%;
+        text-align: center;
+    }
+
+    .reviews-page-navigation .pagination li:first-child{
+        float: left;
+    }
+
+}

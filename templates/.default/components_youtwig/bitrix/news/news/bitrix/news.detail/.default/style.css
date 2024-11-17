@@ -1,0 +1,39 @@
+.news .pager-area {
+	padding-right: 0;
+	width: 90%;
+	margin: 0 auto;
+	max-width: 1600px;
+}
+
+#news-detail {
+	margin: 0 !important;
+	padding: 15px 0 !important;
+}
+
+#news-detail ul li {
+	list-style: none;
+}
+#news-detail ul li.disc {
+    list-style: disc !important;
+}
+
+#news-detail ul li li {
+	list-style: disc;
+}
+
+.detail_picture {
+	margin: 0 15px 15px 0 !important;
+	display: block;
+	float: left;
+	max-width: 300px;
+}
+
+#news-detail h1 {
+	display: inline-block;
+	margin: 0;
+	padding: 0 0 15px 0;
+}
+#news-detail h3,
+#news-detail h2 {
+	font-weight: bold;
+}

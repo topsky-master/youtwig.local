@@ -1,0 +1,66 @@
+<?
+require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+?><?$APPLICATION->IncludeComponent(
+    "bitrix:news.detail",
+    "dmodel",
+    Array(
+        "ACTIVE_DATE_FORMAT" => "d.m.Y",
+        "ADD_ELEMENT_CHAIN" => "Y",
+        "ADD_SECTIONS_CHAIN" => "N",
+        "AJAX_MODE" => "N",
+        "AJAX_OPTION_ADDITIONAL" => "",
+        "AJAX_OPTION_HISTORY" => "N",
+        "AJAX_OPTION_JUMP" => "N",
+        "AJAX_OPTION_STYLE" => "Y",
+        "BROWSER_TITLE" => "-",
+        "CACHE_GROUPS" => "Y",
+        "CACHE_TIME" => "360000000",
+        "CACHE_TYPE" => "A",
+        "CHECK_DATES" => "Y",
+        "DEFAULT_TITLE" => "Аксессуары и запасные части для %s",
+        "DETAIL_URL" => "",
+        "DISPLAY_BOTTOM_PAGER" => "N",
+        "DISPLAY_DATE" => "Y",
+        "DISPLAY_NAME" => "Y",
+        "DISPLAY_PICTURE" => "Y",
+        "DISPLAY_PREVIEW_TEXT" => "Y",
+        "DISPLAY_TOP_PAGER" => "N",
+        "ELEMENT_CODE" => $_REQUEST["CODE"],
+        "ELEMENT_ID" => "-",
+        "FIELD_CODE" => array("ID","CODE","XML_ID","NAME","PREVIEW_TEXT","PREVIEW_PICTURE",""),
+        "IBLOCK_ID" => "17",
+        "IBLOCK_TYPE" => "catalog",
+        "IBLOCK_URL" => "",
+        "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+        "MESSAGE_404" => "Аксессуары и запасные части по Вашему запросу отсутствуют. Перейдите в список моделей или воспользуйтесь поиском.",
+        "META_DESCRIPTION" => "-",
+        "META_KEYWORDS" => "-",
+        "PAGER_BASE_LINK_ENABLE" => "N",
+        "PAGER_SHOW_ALL" => "N",
+        "PAGER_TEMPLATE" => ".default",
+        "PAGER_TITLE" => "Страница",
+        "PROPERTY_CODE" => array("VIEW","INDCODE","POSITION","manufacturer","type_of_product","model_name","SIMPLEREPLACE_VIEW","SIMPLEREPLACE_INDCODE","SIMPLEREPLACE_POSITION","SIMPLEREPLACE_PRODUCTS","RESTORE_PRODUCTS","VERSION","model","model_new","instruction","model_new_link","COMCODE","SIMPLEREPLACE_COMCODE","MANUFACTURER_DETAIL",""),
+        "SET_BROWSER_TITLE" => "Y",
+        "SET_CANONICAL_URL" => "N",
+        "SET_LAST_MODIFIED" => "N",
+        "SET_META_DESCRIPTION" => "Y",
+        "SET_META_KEYWORDS" => "Y",
+        "SET_STATUS_404" => "Y",
+        "SET_TITLE" => "Y",
+        "SHOW_404" => "N",
+        "STRICT_SECTION_CHECK" => "N",
+        "USE_PERMISSIONS" => "N",
+        "USE_SHARE" => "N"
+    )
+);?>
+<?$APPLICATION->IncludeComponent(
+    "impel:meta",
+    "",
+    Array(
+        "AREA_ID" => "",
+        "BLOCK_COLUMNS" => "",
+        "BLOCK_TITLE" => "",
+        "CACHE_TIME" => "36000000",
+        "CACHE_TYPE" => "A"
+    )
+);?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

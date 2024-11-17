@@ -1,0 +1,84 @@
+html body .products-list-info .bx-filter.horizontal .col-lg-12{
+	padding-top: 0!important;
+	margin-top: -10px!important;
+}
+
+html body #hide-scheme,
+html body .views.row,
+html body #view-preview{
+	display: none;
+	bisibility: hidden;
+}
+
+
+.on_stock{
+    display: block;
+    width: 100%;
+    float: none;
+    clear: both;
+    text-align: center;
+}
+
+.bx_catalog_item_title,
+.bx_catalog_item_price{
+    text-align: center;
+}
+
+.bx_catalog_item_images .img-responsive{
+    max-width: 253px;
+    width: auto;
+    margin: 0 auto;
+    display: block;
+    float: none;
+    border: 1px solid #ccc;
+    padding: 5px;
+    background: #fff;
+
+}
+
+.bx_catalog_list_top .bx_catalog_item_images_double,
+.bx_catalog_list_top .bx_catalog_item_images{
+    background: none;
+    border: none;
+    text-align: center;
+}
+
+.about-model-info{
+	margin-bottom: 15px!important;
+}
+
+
+.bx_catalog_list_top > .row > div.col-xs-12{
+    width: 33.3%;
+}
+
+@media screen and (min-width: 767px) and (max-width: 1024px) {
+    .bx_catalog_list_top > .row > div.col-xs-12{
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 767px){
+    .bx_catalog_list_top > .row > div.col-xs-12{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 767px) and (orientation: landscape){
+    .bx_catalog_list_top > .row > div.col-xs-12{
+        width: 50%;
+    }
+}
+
+html body .bx_catalog_list_top .on_stock{
+    display: none!important;
+}
+
+.bx_catalog_item_controls .form-button-area .btn.btn-info{
+    margin-left: -9px;
+}
+
+html body div.about-model-area .title-row h1{
+	margin-bottom: 15px;
+	margin-top: 15px;
+}

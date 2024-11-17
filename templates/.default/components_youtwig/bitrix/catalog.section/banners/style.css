@@ -1,0 +1,31 @@
+/*Home Banner Static*/
+.banner-static-contain { margin: 20px 0 30px;}
+.banner-static-contain .banner-box a {
+	position: relative;
+	overflow: hidden;
+	display: block;
+}
+.banner-static-contain .banner-box img {
+	width: 100%;
+}
+
+.banner-static-contain .banner-box img,
+.block_static_top a img {
+    -moz-transform: scale(1);
+    -webkit-transform: scale(1));
+    transform: scale(1);
+}
+.banner-static-contain .banner-box img:hover,
+.block_static_top a img:hover {
+    -moz-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+
+}
+
+
+.banner-static-contain .banner-box img{
+        transition: 0.3s ease-in-out;
+        -moz-transition: 0.3s ease-in-out;
+        -webkit-transition: 0.3s ease-in-out;
+}

@@ -1,0 +1,1 @@
+<?php $avail_products_wi_get = array(); ?>

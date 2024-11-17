@@ -1,0 +1,4 @@
+@media (max-width:639px){
+    .bx-touch .bx_slider_section.bx_green .bx_slider_arrow_left,
+    .bx-touch .bx_slider_section.bx_green .bx_slider_arrow_right{top:22%	}
+}

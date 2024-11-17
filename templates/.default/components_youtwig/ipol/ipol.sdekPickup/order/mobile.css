@@ -1,0 +1,110 @@
+@media screen and (max-width: 222px){
+    #SDEK_delivInfo_POSTOMAT,#SDEK_delivInfo_PVZ{
+        font-size: 12px;
+    }
+
+    #SDEK_pPrice{
+        font-size: 14px;
+    }
+}
+
+
+@media screen and (max-width: 268px){
+    #SDEK_sign span{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 294px){
+    #SDEK_sign {
+        padding-left: 103px;
+    }
+
+    #SDEK_info{
+        width: 100%;
+        min-width: 195px;
+    }
+
+    #SDEK_closer{
+        right: 12px;
+    }
+
+    .SDEK_arrow{
+        margin-right: 2px;
+    }
+}
+
+@media screen and (max-width: 700px){
+    #SDEK_pvz{
+        width: 100%;
+        min-width: 195px;
+    }
+}
+
+
+    #SDEK_pvz{
+        width: 700px;
+        padding: 0;
+    }
+    #SDEK_closer{
+        right: 11px;
+        top: 11px;
+    }
+
+    #SDEK_logo{
+        display: none;
+    }
+
+    #SDEK_info{
+        box-shadow: none;
+        left: 0px;
+        top: -538px;
+        width: 270px;
+        height: auto;
+        overflow: auto;
+    }
+
+    #SDEK_sign{
+        padding-left: 124px;
+    }
+
+    #SDEK_wrapper{
+        width: 100% !important;
+        height: 460px;
+    }
+
+    /*.jspContainer{
+        width: 100% !important;
+        height: 452px !important;
+    }*/
+
+    #SDEK_ten{
+        width: 256px;
+        height: 17px;
+        top: -9px;
+    }
+
+    #SDEK_delivInfo_PVZ,#SDEK_delivInfo_POSTOMAT{
+        border: none;
+        font-size: 15px;
+        text-shadow: 0px 0px 0px rgb(0, 0, 0);
+        font-weight: normal;
+
+    }
+
+    #SDEK_wrapper p{
+        font-size: 15px;
+    }
+
+    /*.jspPane{
+        width: 100% !important;
+    }*/
+
+    .SDEK_all-items{
+        border-top: 1px dashed #E3E3E3;
+        display: none;
+    }
+
+    .SDEK_arrow{
+        display: block;
+    }

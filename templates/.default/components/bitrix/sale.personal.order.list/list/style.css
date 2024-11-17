@@ -1,0 +1,48 @@
+.table-orders{
+    margin: 10px 0 0 0;
+}
+
+
+.tabfilter .order-list-title{
+    font-weight: bold;
+    padding-right: 10px;
+}
+
+.tabfilter{
+    display: block;
+    margin: 5px 0 20px 0;
+}
+
+.tabfilter a:hover,
+.tabfilter a:active,
+.tabfilter a:link,
+.tabfilter a:visited,
+.tabfilter a{
+    color: #383838;
+    text-decoration: none;
+    padding: 0 10px;
+    display: inline-block;
+}
+
+.table-orders td{
+    vertical-align: middle!important;
+}
+
+.table-orders .btn-order-list{
+    margin-top: 10px;
+}
+
+.table-orders thead th,
+.table-orders thead td{
+    background: #15aad2;
+    color: #fff;
+}
+
+.table-orders tr td:first-child{
+    width: 70%;
+}
+
+.table-orders p{
+    margin: 0!important;
+}
+

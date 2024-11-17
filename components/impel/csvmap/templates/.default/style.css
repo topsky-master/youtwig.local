@@ -1,0 +1,74 @@
+.upload-models .h3{
+    font-weight: bold!important;
+    margin-bottom: 30px!important;
+}
+
+.upload-models .models{
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.upload-models form{
+    margin-bottom: 30px;
+}
+
+.upload-models li,
+.upload-models ul{
+    display: block;
+    margin: 0 0 15px 0;
+    padding: 0 0 15px 0;
+}
+
+.form-group.profile_load,
+.form-group.profile_save{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.form-group.profile_load > select,
+.form-group.profile_save > input[type="text"]{
+    width: calc(100% - 100px);
+}
+
+.form-group.profile_load > .btn,
+.form-group.profile_save > .btn{
+    width: 90px;
+    float: right;
+}
+
+.form-group.profile_load > label,
+.form-group.profile_save > label{
+    width: 100%;
+}
+
+.replaces li{
+    display: flex;
+    justify-content: space-between;
+}
+
+.replaces li input[type="text"]{
+    width: calc(50% - 95px);
+    margin-right: 10px;
+}
+
+ul.paths > li{
+    border-bottom: 1px solid #ccc;
+}
+
+ul.paths > li > div:first-of-type{
+    min-height: 35px;
+}
+
+ul.paths > li > div + div{
+    margin-top: 30px;
+}
+
+ul.paths > li > div:first-of-type > .btn{
+    margin-left: 15px;
+    float: right;
+}
+
+.replaces li:first-of-type button.btn{
+    visibility: hidden!important;
+}

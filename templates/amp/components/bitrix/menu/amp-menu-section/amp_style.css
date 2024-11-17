@@ -1,0 +1,133 @@
+main {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.amp-category-list section h4{
+	margin: 0;
+}
+
+.catalog-section > amp-accordion.amp-category-list > section:not([expanded]) > h4,
+.catalog-section > amp-accordion.amp-category-list > section:not([expanded]){
+	max-height: 45px;
+	height: 45px;
+	overflow: hidden;
+	position: relative;
+	box-sizing: border-box;
+	margin: 0;
+}
+
+.catalog-section > amp-accordion.amp-category-list > section:not([expanded]) > h4 + amp-accordion{
+	display: none;
+	height: 0;
+	overflow: hidden;
+	visibility: hidden;
+}
+
+.amp-category-list{
+    background-color: #fff;
+    margin: 0;
+}
+
+.amp-category-list h4 + span + a{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    z-index: 5;
+}
+
+.amp-category-list .currentsection{
+    margin-bottom: -45px;
+}
+
+.amp-category-list .fbold{
+	font-weight: bold;
+}
+
+.amp-category-list .currentsection > h4,
+.amp-category-list .currentsection > h4 + div{
+    top: -45px;
+}
+
+.amp-category-list section{
+    border: none;
+    background: none;
+}
+
+.amp-category-list section div,
+.amp-category-list section h4{
+    border: none;
+    border-bottom: 1px solid #c1c1c1;
+    font-weight: 400;
+    font-size: 14px;
+    padding: 12px 35px 12px 15px;
+    background: none;
+    text-decoration: none;
+    cursor: pointer;
+    outline: none;
+}
+
+.amp-category-list section h4:after,
+.amp-category-list section h4:before{
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 1px;
+    background: #111;
+    top: 50%;
+    right: 13px;
+    transition: all .5s ease;
+}
+
+.amp-category-list section h4:before{
+    margin-top: -2px;
+    transform: rotate(45deg);
+}
+
+.amp-category-list section h4:after{
+    margin-top: 2px;
+    transform: rotate(-45deg);
+}
+
+
+.amp-category-list section[expanded] > h4:before{
+    transform: rotate(-45deg);
+    top: 56%;
+}
+
+.amp-category-list section[expanded] > h4:after{
+    right: 17px;
+    transform: rotate(45deg);
+}
+
+.amp-category-list section div,
+.amp-category-list section h4{
+    padding-left: 30px;
+}
+
+.amp-category-list section section div,
+.amp-category-list section section h4{
+    padding-left: 45px;
+}
+
+.amp-category-list > section > h4{
+	padding-left: 15px;
+}
+
+.amp-category-list section section > section div,
+.amp-category-list section section > section h4{
+    padding-left: 60px;
+}
+
+.amp-category-list section section  > section  > section div,
+.amp-category-list section section  > section  > section h4{
+    padding-left: 75px;
+}
+
+.amp-category-list section section  > section  > section  > section div,
+.amp-category-list section section  > section  > section  > section h4{
+    padding-left: 90px;
+}
+

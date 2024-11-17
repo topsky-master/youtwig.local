@@ -1,0 +1,50 @@
+@media screen and (max-width: 1199px) {
+    .ticket-edit-message{
+        margin: 0;
+    }
+
+
+}
+
+@media screen and (max-width: 767px) {
+
+    .table-support-ticket,
+    .table-support-ticket thead,
+    .table-support-ticket tbody,
+    .table-support-ticket th,
+    .table-support-ticket td,
+    .table-support-ticket tr{
+        display: block;
+        width: 100%!important;
+    }
+
+    .table-support-ticket td{
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+    }
+
+    .table-support-ticket td,
+    .table-support-ticket th{
+        text-align: center!important;
+    }
+
+    .table-support-ticket th,
+    .table-support-ticket td{
+        empty-cells: hide;
+    }
+
+    .table-support-ticket .column-title{
+        font-weight: bold;
+    }
+
+    .table-support-ticket .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn){
+        width: 100%;
+    }
+
+    .table-support-ticket .btn{
+        margin-bottom: 5px;
+    }
+
+}
+

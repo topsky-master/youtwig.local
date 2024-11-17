@@ -1,0 +1,49 @@
+html body .bx-filter.horizontal .bx-filter-parameters-box{
+    height: auto!important;
+}
+
+html body .products-list-info .bx-filter.horizontal .col-lg-12{
+    padding-bottom: 15px!important;
+}
+
+html body .products-list-info .bx-filter.horizontal .btn.btn-more{
+    display: none!important;
+}
+
+@media (max-width: 767px){
+    html body .products-list-info .views > div{
+        width: 100%!important;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    html body .products-list-info .views > div{
+        width: calc(50% - 30px);
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .about-model-info.col-xs-12{
+        padding-left: 15px !important;
+        padding-right: 0!important;
+    }
+
+    .about-model-info.col-xs-12 .col-sm-6{
+        padding-right: 0!important;
+    }
+
+    html div.about-model-area div.products-list-info{
+        margin-top: 0!important;
+    }
+
+    html body .products-list-info .views > div{
+        width: calc(50% - 30px);
+    }
+
+}
+
+@media (max-width: 1199px) {
+    html .row.title-row{
+        margin-top: 0!important;
+    }
+}

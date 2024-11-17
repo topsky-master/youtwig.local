@@ -1,0 +1,33 @@
+@media screen and (min-width: 1200px) {
+
+    #support_edit .container-fluid > div,
+    #support_edit .container-fluid{
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    #support_edit .i-agree-row{
+        margin: 30px 0 35px;
+    }
+
+    #support_edit .container-fluid{
+        display: flex;
+        align-items: center;
+    }
+
+    .chargeback-description br,
+    #support_edit .field-help br{
+        display: block;
+    }
+
+    #support_edit .buttons-row .btn.btn-info{
+        font-size: 24px;
+        line-height: 45px;
+        border-radius: 0;
+        font-weight: bold;
+        padding: 0 70px;
+        display: inline-block;
+        margin-bottom: 15px;
+    }
+
+}

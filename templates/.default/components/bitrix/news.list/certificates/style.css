@@ -1,0 +1,52 @@
+@media screen and (max-width: 767px) {
+    .brands-img > a {
+        display: block;
+        min-height: 112px;
+    }
+
+    .pagination {
+        display: block;
+        width: 100%;
+        text-align: right;
+    }
+
+    html .pagination > li {
+        display: inline-block;
+        width: 48%;
+        margin: 0 1%;
+    }
+
+    .brands-list .brands-img {
+        margin-top: 10px;
+    }
+
+    .pagination li a {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+    .brand h1 {
+        font-size: 22px;
+        padding: 0 15px;
+    }
+}
+@media screen and (max-width: 1024px) {
+    .brands-list .btn.btn-info span {
+        display: none;
+    }
+
+    .brands-list .brands-item {
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .brands-list .brands-item {
+        margin-top: 15px;
+    }
+
+    .brands-img > a {
+        display: block;
+        min-height: 165px;
+    }
+}

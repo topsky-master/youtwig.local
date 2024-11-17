@@ -1,0 +1,12 @@
+<?
+$PERM["index.php"]["G2"]="D";
+$PERM["index.php"]["*"]="R";
+$PERM["chargeback"]["2"]="D";
+$PERM["support"]["2"]="D";
+$PERM["profile"]["2"]="D";
+$PERM["order"]["2"]="D";
+$PERM["acc"]["G9"]="R";
+$PERM["acc"]["G8"]="R";
+$PERM["acc"]["G5"]="R";
+$PERM["acc"]["*"]="R";
+?>

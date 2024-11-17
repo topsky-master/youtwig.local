@@ -1,0 +1,23 @@
+{
+    "name": "TWiG - Запчасти для бытовой техники",
+    "description": "Продажа запасных частей для бытовой техники",
+    "short_name": "TWiG",
+    "display": "standalone",
+    "Scope": "/",
+    "start_url": "/?utm_source=standalone\u0026utm_medium=pwa",
+    "prefer_related_application": false,
+    "icons": [
+        {
+            "src": "/local/templates/nmain/favicon/512.svg",
+            "sizes": "any"
+        },
+         {
+            "src": "/local/templates/nmain/favicon/512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+       
+    ],
+    "theme_color": "#ffffff",
+    "background_color": "#ffffff"
+}

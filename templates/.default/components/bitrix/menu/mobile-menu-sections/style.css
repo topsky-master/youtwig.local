@@ -1,0 +1,86 @@
+html body .accordion-menu,
+html body .accordion-menu div,
+html body .accordion-menu p,
+html body .accordion-menu .panel-heading,
+html body .accordion-menu .panel-body,
+html body .accordion-menu a{
+    padding: 0;
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    color: #383838;
+    font-weight: normal;
+    outline: none!important;
+    whie-space: normal;
+}
+
+html body .accordion-menu .panel-heading a{
+    border-bottom: 1px solid #c1c1c1!important;
+}
+
+html body .accordion-menu .panel-heading{
+    background: #fff;
+    border: none;
+    transition: background .5s ease;
+}
+
+html body .accordion-menu a{
+    font-weight: 400;
+    text-transform: none;
+    font-size: 14px;
+    padding: 12px 35px 12px 15px;
+    background: none;
+    height: auto;
+    display: block;
+    box-sizing: border-box;
+    text-decoration: none;
+    cursor: pointer;
+    position: relative;
+}
+
+html body .accordion-menu a:after,
+html body .accordion-menu a:before{
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 1px;
+    background: #111;
+    top: 50%;
+    right: 13px;
+    transition: all .5s ease;
+}
+
+html body .accordion-menu a:not(.collapsed):before{
+    margin-top: -2px;
+    transform: rotate(45deg);
+}
+
+html body .accordion-menu a.collapsed:before{
+    transform: rotate(-45deg);
+}
+
+html body .accordion-menu a:not(.collapsed):after{
+    margin-top: 2px;
+    transform: rotate(-45deg);
+}
+
+html body .accordion-menu a.collapsed:after{
+    right: 17px;
+    transform: rotate(45deg);
+}
+
+html body .accordion-menu .panel-body .panel-heading a{
+    padding-left: 30px;
+}
+
+html body .accordion-menu .panel-body .panel-body .panel-heading a{
+    padding-left: 45px;
+}
+
+html body .accordion-menu .panel-body .panel-body .panel-body .panel-heading a{
+    padding-left: 60px;
+}
+
+html body .accordion-menu a.fbold{
+    font-weight: bold!important;
+}

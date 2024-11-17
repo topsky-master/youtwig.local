@@ -1,0 +1,4 @@
+Обмен заказами акрит, запррет созданя заказов в 8 и 10 профилях обмена
+bitrix/modules/acrit.core/lib/orders/ordersync.php
+bitrix/modules/acrit.core/lib/orders/products.php
+bitrix/modules/acrit.core/lib/orders/controller.php

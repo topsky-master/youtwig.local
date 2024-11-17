@@ -1,0 +1,29 @@
+@media screen and (max-width: 767px) {
+
+    .bx-auth-reg table,
+    .bx-auth-reg table thead,
+    .bx-auth-reg table tbody,
+    .bx-auth-reg table th,
+    .bx-auth-reg table td,
+    .bx-auth-reg table tr{
+        display: block;
+        width: 100%!important;
+    }
+
+    .bx-auth-reg table td{
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+    }
+
+    .bx-auth-reg table td,
+    .bx-auth-reg table th{
+        text-align: center!important;
+    }
+
+    .bx-auth-reg table th,
+    .bx-auth-reg table td{
+        empty-cells: hide;
+    }
+
+}

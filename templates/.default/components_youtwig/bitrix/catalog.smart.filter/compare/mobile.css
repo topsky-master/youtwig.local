@@ -1,0 +1,21 @@
+
+    .bx-filter.compare .bx-filter-parameters-box{
+        margin: 0;
+        border-radius: 0;
+    }
+
+    .bx-filter.compare .bx-filter-parameters-box .checkbox-wrapper{
+        height: auto!important;
+    }
+
+    .bx-filter.compare .bx-filter-parameters-box .btn-more{
+        display: none!important;
+    }
+
+    .bx-filter.compare  .bx-filter-parameters-box-44{
+        display: block!important;
+    }
+
+    .bx-filter.compare .bx-filter-popup-result .arrow {
+        display: none;
+    }

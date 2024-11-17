@@ -1,0 +1,130 @@
+.ticket-edit-message{
+   border: 1px solid #ccc;
+   width: 95%;
+   margin: 10px 0 10px 2.5%;
+   border-radius: 6px;
+   -moz-border-radius: 6px;
+   -webkit-border-radius: 6px;
+   background: #fff;
+   padding: 10px;
+   box-sizing: content-box;
+   clear: both;
+   float: none;
+}
+
+.edit-support-ticket table{
+    background: #fff;
+}
+.bg-success{
+    background: #fff;
+    padding: 10px!important;
+    margin: 15px 0 10px 0!important;
+    color: #000;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+}
+
+#support_edit .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn){
+    width: 100%;
+}
+
+#support_edit .container-fluid > div{
+    margin-bottom: 15px;
+}
+
+#support_edit .form_title,
+#support_edit .field-help{
+    color: #a3a9ad;
+}
+
+#support_edit .h3-chargeback-title,
+#support_edit .chargeback-description{
+    text-align: center;
+}
+
+#support_edit .h3-chargeback-title{
+    margin-top: 28px;
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+#support_edit .chargeback-description{
+    margin-bottom: 30px;
+}
+
+#support_edit #MESSAGE{
+    max-width: 100%;
+    border-radius: 0!important;
+}
+
+#support_edit .bootstrap-select .btn{
+    border-radius: 0!important;
+    position: relative;
+}
+
+#support_edit .bootstrap-select .caret{
+    border: none;
+    color: #a3a9ad;
+    top: 9px;
+    right: 18px;
+}
+
+#support_edit input[type="checkbox"]{
+    display: none;
+}
+
+#support_edit .bootstrap-select .caret:after{
+    content: "\f107";
+    display: inline-block;
+    font: normal normal normal 18px/1 FontAwesome;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #a3a9ad;
+}
+
+#support_edit .checkbox-style:after{
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: "\f096";
+    transition: all 0.5s ease-out;
+    -webkit-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    color: #8abb1f;
+    cursor: pointer;
+    min-width: 20px;
+}
+
+#support_edit input[type="checkbox"]:checked+.checkbox-style:after{
+    content: "\f046";
+    transition: all 0.5s ease-out;
+    -webkit-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+}
+
+#support_edit .i-agree-row a{
+    color: #383838;
+    border-bottom: 1px dotted #383838;
+    text-decoration: none;
+}
+
+#support_edit .buttons-row{
+    text-align: center;
+}
+
+.chargeback-description br,
+#support_edit .field-help br{
+    display: none;
+}
+
+#support_edit .container-fluid > div,
+#support_edit .container-fluid{
+    padding-left: 0;
+    padding-right: 0;
+}

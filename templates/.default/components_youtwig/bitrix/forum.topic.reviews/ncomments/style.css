@@ -1,0 +1,222 @@
+.reviews-navigation-box {
+    display: none!important;
+}
+
+.popover-content .g-recaptcha{
+    margin-top: 15px;
+}
+
+.add-answer{
+    padding-left: 15px;
+}
+
+.add-answer > span{
+    cursor: pointer;
+}
+
+.add-answer .popover.bottom{
+    min-width: 320px;
+}
+
+.add-answer .popover.bottom .btn{
+    margin-top: 15px;
+}
+
+.reply-for-review{
+    padding-left: 50px;
+}
+
+.reviews-reply-form{
+    margin-top: 30px;
+    background: #ebebeb;
+    padding: 25px 22px 20px 22px;
+    position: relative;
+}
+
+.reviews-reply-form .row{
+    padding-bottom: 15px;
+}
+
+.reviews-reply-form .col-sm-6,
+.reviews-reply-form .col-sm-12{
+    padding: 0 7px;
+}
+
+.reviews-reply-form textarea{
+    max-width: 100%;
+    min-width: 100%;
+    min-height: 32px;
+}
+
+.reviews-reply-form .reviews-reply-rating input{
+    display: none;
+}
+
+.reviews-reply-form .reviews-reply-rating label.fa.star{
+    padding: 0 4px 0 0;
+}
+
+.reviews-reply-form .reviews-reply-rating label.fa.star,
+.reviews-reply-form .reviews-reply-rating label.fa.star:before{
+    cursor: pointer;
+    font-size: 14px;
+    display: block;
+}
+
+.reviews-reply-form .reviews-reply-rating{
+    width: 85px;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.reviews-reply-form .reviews-reply-rating input:checked ~ label.fa.star:before{
+    content: "\f005";
+    color: #f7941d;
+}
+
+.reviews-reply-form .product-rating{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.reviews-reply-form .product-rating > span{
+    padding-right: 5px;
+}
+
+.reviews-reply-form .product-rating label{
+    margin-bottom: 0;
+}
+
+.reviews-reply-form .h3-review-title{
+    margin: 0;
+    font-size: 18px;
+}
+
+.reviews{
+    padding: 0 0 30px 0;
+    float: none;
+    clear: both;
+}
+
+.reviews-block-container > div{
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+    display: flex;
+}
+
+.review-avatar{
+    width: 40px;
+}
+
+.review-avatar i{
+    border-radius: 50%;
+    border: 1px solid #cbcbcb;
+    font-size: 28px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #cbcbcb;
+}
+
+.reviews-text{
+    width: calc(100% - 40px);
+    padding-left: 20px;
+    position: relative;
+}
+
+.reviews-text > i:first-child{
+    color: #2c2c2c;
+    display: block;
+    font-style: normal;
+}
+
+.reviews-text > i:first-child + br + i{
+    color: #cbcbcb;
+    display: block;
+    margin-bottom: 20px;
+    font-style: normal;
+}
+
+.reviews-text > i:first-child + br,
+.reviews-text > i:first-child + br + i + br,
+.reviews-text > i:first-child + br + i + br + b + i + br,
+.reviews-text > i:first-child + br + i + br + b + i + br + b + i + br{
+    display: none;
+}
+
+.reviews-text > i:first-child + br + i + br + b,
+.reviews-text > i:first-child + br + i + br + b + i,
+.reviews-text > i:first-child + br + i + br + b + i + br + b,
+.reviews-text > i:first-child + br + i + br + b + i + br + b + i{
+    display: block;
+    padding-left: 25px;
+    margin-bottom: 10px;
+    font-weight: 100;
+    font-style: normal;
+}
+
+.reviews-text > i:first-child + br + i + br + b,
+.reviews-text > i:first-child + br + i + br + b + i + br + b{
+    font-size: 18px;
+    position: relative;
+}
+
+.reviews-text > i:first-child + br + i + br + b + i + br + b::after,
+.reviews-text > i:first-child + br + i + br + b::after{
+    position: absolute;
+    left: 0;
+    top: 7px;
+    color: #86b817;
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    content: "\f067";
+}
+
+.reviews-text > i:first-child + br + i + br + b + i + br + b::after{
+    content: "\f068";
+}
+
+.reviews-text .mess-rating-info{
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.reviews-text .mess-rating-info .fa{
+    color: #ebebeb;
+}
+
+.reviews-text .mess-rating-info .fa.fa-star{
+    color: #f7941d;
+}
+
+.alert + .reviews > .alert:first-child{
+    display: none;
+}
+
+span[itemprop="review"] {
+    width: 100%;
+    display: block;
+}
+
+#comp_smart_filter + #REVIEWS{
+    margin-top: 15px;
+}
+
+@media screen and (max-width: 991px) {
+
+    .container-fluid.reviews{
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .reviews-reply-form .col-sm-12:first-child{
+        padding-bottom: 15px;
+    }
+}

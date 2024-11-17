@@ -1,0 +1,364 @@
+Options -Indexes
+ErrorDocument 404 /404.php
+
+SetEnvIf X-Forwarded-Proto https HTTPS=on
+#Modpagespeed Off
+
+<IfModule mod_php7.c>
+    php_value max_input_vars 3000
+    #php_value memory_limit 128M
+    php_flag allow_call_time_pass_reference 1
+    php_flag session.use_trans_sid off
+    php_value display_errors 1
+    #php_value mbstring.internal_encoding UTF-8
+    #php_value ModPagespeed off
+    php_value session.gc_maxlifetime 2920000
+    #php_value auto_prepend_file "/var/www/twig/data/www/youtwig.ru/bitrix/prepend.php"
+</IfModule>
+
+<IfModule mod_rewrite.c>
+    Options +FollowSymLinks
+    RewriteEngine On
+    Order Allow,Deny
+    Allow from all
+
+    RewriteRule ^brand/(.*)/pages3\-([0-9]+)/ /brand/$1/pages-$2/ [R=301,L,QSA]
+
+    RewriteRule ^(.*)/pages\-1/ /$1/ [R=301,L]
+
+    RewriteRule ^(.*)/pages\-([\d]+)/ /$1/?&PAGEN_1=$2 [L,QSA]
+    RewriteRule ^(.*)/pages([\d]+)\-([\d]+)/ /$1/?&PAGEN_$2=$3 [L,QSA]
+    RewriteRule ^(.*?)/filter/([^/]+?)/(typeproduct\-is[^/]+?/)(.*) $1/filter/$3/$2$4 [L,QSA]
+
+
+    RewriteCond %{HTTP_HOST} ^xn--b1aco2b.xn--p1ai$ [NC]
+    RewriteCond %{REQUEST_URI} [^a-z0-9\-\_]+ [NC]
+    RewriteCond %{REQUEST_URI} !^/$ [NC]
+    RewriteRule ^(.*)$ https://market.yandex.ru/shop/228852/reviews [R=301,L]
+    RewriteCond %{HTTP_HOST} ^www\.(.*) [NC]
+    RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+    RewriteCond %{HTTP_HOST} ^(m\.)*youtwig\.ru$ [NC]
+
+    RewriteCond %{HTTPS} off
+    RewriteCond %{HTTP:X-Forwarded-Proto} !https
+    RewriteRule ^(.*)$ https://youtwig.ru/$1 [L,R=301]
+
+    RewriteCond %{HTTP_HOST} m\.youtwig\.ru(.*) [NC]
+    RewriteRule ^(.*)$ https://youtwig.ru/$1 [L,R=301]
+
+    RewriteCond %{HTTPS_HOST} ^www\.twig\.su(.*) [NC]
+    RewriteRule ^(.*)$ https://youtwig.ru/$1 [R=301,L]
+    RewriteCond %{HTTP_HOST} ^xn--b1aco2b.xn--p1ai(.*) [NC]
+    RewriteRule ^(.*)$ https://youtwig.ru/$1 [R=301,L]
+	RewriteCond %{REQUEST_URI} ^/model/stiralnaya_mashina_brand_model/ [NC]
+	RewriteRule ^(.*)$ /model/stiralnaya_mashina_aeg_carat_2658_605251004/ [R=301,L]
+
+    RewriteCond %{REQUEST_URI} ^/catalog/category-zapchasti-mbt/categoria-hlebopechki/lopatka-testomes-dlya-khlebopechki-kenwood-\+bm250-bm256-bm350/ [NC]
+    RewriteRule ^(.*)$ /catalog/category-zapchasti-mbt/categoria-hlebopechki/lopatka-testomes-dlya-khlebopechki-kenwood-bm250-bm256-bm350/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/category-zapchasti-mbt/categoria-hlebopechki/lopatka-testomes-dlya-khlebopechki-redmond-rbm-1904/ [NC,OR]
+    RewriteCond %{REQUEST_URI} ^/category-zapchasti-mbt/categoria-hlebopechki/lopatka-testomes-dlya-khlebopechki-clatronic/ [NC,OR]
+    RewriteCond %{REQUEST_URI} ^/category-zapchasti-mbt/categoria-hlebopechki/ [NC,OR]
+    RewriteCond %{REQUEST_URI} ^/category-zapchasti-mbt/categoria-hlebopechki/lopatka-testomes-dlya-khlebopechki-moulinex-ms-0925566/ [NC,OR]
+    RewriteCond %{REQUEST_URI} ^/category-zapchasti-mbt/categoria-hlebopechki/shesternya-bolshaya-moulinex-ss-186170/ [NC,OR]
+    RewriteCond %{REQUEST_URI} ^/category-zapchasti-mbt/category-miasorubki/ [NC,OR]
+    RewriteCond %{REQUEST_URI} ^/category-zapchasti-mbt/category-miasorubki/nozh-dlya-myasorubki-scarlett-sc-001/ [NC,OR]
+    RewriteCond %{REQUEST_URI} ^/category-zapchasti-mbt/category-miasorubki/nozh-dlya-myasorubok-zelmer-kod-vn027-dvuhstoronniy/ [NC,OR]
+    RewriteCond %{REQUEST_URI} ^/category-zapchasti-mbt/category-miasorubki/shesternya-dlya-myasorubki-braun-kod-67000898/ [NC,OR]
+    RewriteCond %{REQUEST_URI} ^/dlia_pylesosa/meshok-mnogorazovyy-dlya-pylesosov-kod-tovara-pl-035/ [NC]
+    RewriteRule ^(.*)$ /catalog/$1 [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/catalog/category-zapchasti-mbt/category-miasorubki/nozh-dlya-myasorubki-philips-hr-7755/ [NC]
+    RewriteRule ^(.*)$ /catalog/category-zapchasti-mbt/category-miasorubki/nozh-dlya-myasorubki-philips-hr7755/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/catalog/prochee/klapan-konforki-troynoy-korony-dlya-varochnoy-paneli-midea-q452sfd-iv/ [NC]
+    RewriteRule ^(.*)$ /catalog/category-zapchasti-mbt/dlja_varochnyh_panelej/klapan-konforki-troynoy-korony-dlya-varochnoy-paneli-midea-q452sfd-iv/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/catalog/category-zapchasti-mbt/category-miasorubki/kryshka-reduktora-dlya-myasorubki-moulinex-ss-989655/ [NC]
+    RewriteRule ^(.*)$ /catalog/category-zapchasti-mbt/category-miasorubki/kryshka-korpusa-reduktora-dlya-myasorubki-moulinex-ss-989655/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/catalog/category-zapchasti-mbt/dlia-blenderov-mikserov/reduktor-k-chasham-blendera-braun-mr6500-7051016/ [NC]
+    RewriteRule ^(.*)$ /catalog/category-zapchasti-mbt/dlia-blenderov-mikserov/reduktor-k-chasham-blendera-braun-7051016/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/catalog/category-zapchasti-mbt/categoria-hlebopechki/lopatka-dlya-khlebopechki-gorenje-bm1400e-dlya-dvoynoy-formy-vypechki/ [NC]
+    RewriteRule ^(.*)$ /catalog/category-zapchasti-mbt/categoria-hlebopechki/lopatka-dlya-khlebopechki-gorenje-bm1400e/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/catalog/category-zapchasti-mbt/dlia-blenderov-mikserov/reduktor-k-chasham-blendera-350ml-braun-mq735-sauce/ [NC]
+    RewriteRule ^(.*)$ /catalog/category-zapchasti-mbt/dlia-blenderov-mikserov/reduktor-k-chasham-blendera-braun-7322111264/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/catalog/category-zapchasti-mbt/dlia-blenderov-mikserov/reduktor-k-chasham-blendera-350ml-braun-mr530/ [NC]
+    RewriteRule ^(.*)$ /catalog/category-zapchasti-mbt/dlia-blenderov-mikserov/reduktor-k-chasham-blendera-braun-7322111264/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/catalog/category-zapchasti-mbt/dlia-blenderov-mikserov/reduktor-k-chasham-blendera-braun-mr5555-7051016/ [NC]
+    RewriteRule ^(.*)$ /catalog/category-zapchasti-mbt/dlia-blenderov-mikserov/reduktor-k-chasham-blendera-braun-7051016/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/catalog/category-zapchasti-mbt/category-miasorubki/disk-derjatel-moolinex-ms-0695608/ [NC]
+    RewriteRule ^(.*)$ /catalog/category-zapchasti-mbt/dlia-blenderov-mikserov/disk-derjatel-moolinex-ms-0695608/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/catalog/category-zapchasti-mbt/dlia-blenderov-mikserov/reduktor-k-chasham-blendera-braun-mr550-7051423/ [NC]
+    RewriteRule ^(.*)$ /catalog/category-zapchasti-mbt/dlia-blenderov-mikserov/reduktor-k-chasham-blendera-braun-7051423/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/model/myasorubka_panasonic_mk_g30/ [NC]
+    RewriteRule ^(.*)$ /model/myasorubka_panasonic_mkg30pr/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/catalog/category-zapchasti-mbt/dlia-blenderov-mikserov/setevoy-shnur-dlya-blendera-moulinex-ss-0612126/ [NC]
+    RewriteRule ^(.*)$ /catalog/category-zapchasti-mbt/dlia-blenderov-mikserov/setevoy-shnur-dlya-blendera-moulinex-ms-0612126/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/model/svch_samsung_ge732kr_s_bwt/ [NC]
+    RewriteRule ^(.*)$ /model/svch_samsung_ge732kr_s/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/catalog/category-zapchasti-mbt/categoria-hlebopechki/lopatka-dlya-khlebopechki-orion-obm-27g/ [NC]
+    RewriteRule ^(.*)$ /catalog/category-zapchasti-mbt/categoria-hlebopechki/lopatka-testomes-dlya-khlebopechki-orion-obm-27-g-obm-204-obm-205-obm-206-obm-24-w/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/catalog/dla_stiralok/pemkomplekt-dveri-posudomoechnoy-mashiny-bosch-siemens-neff-754869/ [NC]
+    RewriteRule ^(.*)$ /catalog/category-zapchasti-mbt/category-pmm/pemkomplekt-dveri-posudomoechnoy-mashiny-bosch-siemens-neff-754869/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/catalog/category-zapchasti-mbt/dlia-blenderov-mikserov/reduktor-k-chasham-blendera-350ml-braun-mr4050/ [NC]
+    RewriteRule ^(.*)$ /catalog/category-zapchasti-mbt/dlia-blenderov-mikserov/reduktor-k-chasham-blendera-braun-7322111264/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/catalog/category-zapchasti-mbt/category-miksery/komplekt-venchikov-dlya-miksera-braun-ha-m/ [NC]
+    RewriteRule ^(.*)$ /catalog/category-zapchasti-mbt/dlia-blenderov-mikserov/komplekt-venchikov-dlya-miksera-braun-ha-m/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/catalog/category-zapchasti-mbt/category-miasorubki/nozh-dlya-myasorubki-bork-zelmer-moulinex-kenwood/ [NC]
+    RewriteRule ^(.*)$ /catalog/category-zapchasti-mbt/category-miasorubki/nozh-dlya-myasorubki-moulinex-ss-193517/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/catalog/category-zapchasti-mbt/category-miasorubki/nozh-dlya-myasorubki-bork-zelmer-moulinex-kenwood-6108208a/ [NC]
+    RewriteRule ^(.*)$ /catalog/category-zapchasti-mbt/category-miasorubki/nozh-dlya-myasorubki-moulinex-ss-193517a/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/catalog/category-zapchasti-mbt/category-miasorubki/nozh-dlya-myasorubki-kenwood-kod-kw712679/ [NC]
+    RewriteRule ^(.*)$ /catalog/category-zapchasti-mbt/category-miasorubki/nozh-dlya-myasorubki-kenwood-kw712679-original/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/category-zapchasti-mbt/category-dlia-miasorubok-kuh-kombajnov/shesternya-mufta-shneka-dlya-myasorubki-zelmer/ [NC]
+    RewriteRule ^(.*)$ /catalog/category-zapchasti-mbt/category-miasorubki/shesternya-mufta-shneka-dlya-myasorubki-zelmer/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/catalog/category-zapchasti-mbt/categoria-hlebopechki/categoria-hlebopechki-remni-hp-011/ [NC]
+    RewriteRule ^(.*)$ /catalog/category-zapchasti-mbt/categoria-hlebopechki/remen-dlya-khlebopechki-hp011/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/catalog/category-zapchasti-mbt/categoria-hlebopechki/lopatka-dlya-khlebopechki-scarlett-sc400/ [NC]
+    RewriteRule ^(.*)$ /catalog/category-zapchasti-mbt/categoria-hlebopechki/lopatka-dlia-hlebopechki-skarlett-sc-400/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/catalog/category-zapchasti-mbt/category-miasorubki/nozh-dlya-kukhonnogo-kombayna-bosch-601507/ [NC]
+    RewriteRule ^(.*)$ /catalog/category-zapchasti-mbt/dlia-blenderov-mikserov/nozh-dlya-kukhonnogo-kombayna-bosch-601507/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/catalog/category-zapchasti-mbt/category-mikrovolnovki/tarelka-dlya-mikrovolnovoy-pechi-samsung-qw71xr/ [NC]
+    RewriteRule ^(.*)$ /catalog/category-zapchasti-mbt/category-mikrovolnovki/tarelka-dlya-samsung-qw71xr/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/catalog/category-zapchasti-mbt/category-miksery/komplekt-venchikov-dlya-miksera-braun-m820/ [NC]
+    RewriteRule ^(.*)$ /catalog/category-zapchasti-mbt/dlia-blenderov-mikserov/komplekt-venchikov-dlya-miksera-braun-m820/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/catalog/nozh-dlya-myasorubki-philips-hr7752-hr7754-hr7768-hr2724-hr2725/ [NC]
+    RewriteRule ^(.*)$ /catalog/category-zapchasti-mbt/category-miasorubki/nozh-dlya-myasorubki-philips-hr7752-hr7754-hr7768-hr2724-hr2725/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/catalog/category-zapchasti-mbt/categoria-hlebopechki/remen-dlya-khlebopechki-hp019.html [NC]
+    RewriteRule ^(.*)$ /catalog/category-zapchasti-mbt/categoria-hlebopechki/remen-dlya-khlebopechki-ms80s3m519/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/catalog/shesternya-dlya-myasorubki-kenwood-mg360-srednyaya/ [NC]
+    RewriteRule ^(.*)$ /catalog/category-zapchasti-mbt/category-miasorubki/shesternya-srednyaya-dlya-myasorubki-kenwood-mg-360/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/catalog/meshok-mnogorazovyy-dlya-pylesosov-thomas-kod-pl037/ [NC]
+    RewriteRule ^(.*)$ /catalog/dlia_pylesosa/meshok-mnogorazovyy-dlya-pylesosov-thomas-kod-pl037/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/catalog/vedro-dlya-khlebopechki-kenwood-bm250-bm260-bm366/ [NC]
+    RewriteRule ^(.*)$ /catalog/category-zapchasti-mbt/categoria-hlebopechki/vedro-dlya-khlebopechki-kenwood-dlkw713201/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/catalog/nozhreshyotka-dlya-myasorubki-braun-g1100-g1300/ [NC]
+    RewriteRule ^(.*)$ /catalog/category-zapchasti-mbt/category-miasorubki/nozhreshyotka-dlya-myasorubki-braun-g1100-g1300/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/catalog/uplotnitel-shneka-braun-67002715/ [NC]
+    RewriteRule ^(.*)$ /catalog/category-zapchasti-mbt/category-miasorubki/prokladka-myasorubki-braun-7002715/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/catalog/shesternya-dlia-myasorubki-vs008/ [NC]
+    RewriteRule ^(.*)$ /catalog/category-zapchasti-mbt/category-miasorubki/shesternya-dlia-myasorubki-vs008/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/catalog/lopatka-dlya-khlebopechki-clatronic-bba-2865/ [NC]
+    RewriteRule ^(.*)$ /catalog/category-zapchasti-mbt/categoria-hlebopechki/lopatka-dlya-khlebopechki-clatronic-bba-2865/ [R=301,L]
+
+    RewriteCond %{REQUEST_URI} ^/catalog/vtulka-vedra-khlebopechki-liberton-lbm04/ [NC]
+    RewriteRule ^(.*)$ /catalog/category-zapchasti-mbt/categoria-hlebopechki/lopatka-dlya-khlebopechki-liberton-lbm-04/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/catalog/remen-dlya-khlebopechki-liberton-lbm-03/ [NC]
+    RewriteRule ^(.*)$ /catalog/category-zapchasti-mbt/categoria-hlebopechki/remen-dlya-khlebopechki-liberton-lbm-03/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/catalog/shnek-dlya-myasorubki-bosch-analog/ [NC]
+    RewriteRule ^(.*)$ /catalog/category-zapchasti-mbt/category-miasorubki/shnek-dlya-myasorubki-bosch-analog/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/catalog/lopatka-testomes-dlya-hlebopechki-kenwood-bm-900/ [NC]
+    RewriteRule ^(.*)$ /catalog/category-zapchasti-mbt/categoria-hlebopechki/lopatka-testomes-dlya-hlebopechki-kenwood-bm-900/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/catalog/dla_stiralok/pemkomplekt-dveri-posudomoechnoy-mashiny-bosch-siemens-neff-754866/ [NC]
+    RewriteRule ^(.*)$ /catalog/category-zapchasti-mbt/category-pmm/pemkomplekt-dveri-posudomoechnoy-mashiny-bosch-siemens-neff-754866/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/catalog/nozh-dlya-myasorubki-kenwood-mg500-original/ [NC]
+    RewriteRule ^(.*)$ /catalog/category-zapchasti-mbt/category-miasorubki/nozh-dlya-myasorubki-kenwood-mg500-original/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/catalog/hepa-filtr-pylesosa-bosch-sfera-41/ [NC]
+    RewriteRule ^(.*)$ /catalog/dlia_pylesosa/hepa-filtr-pylesosa-bosch-sfera-41/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/catalog/lopatka-testomes-dlya-khlebopechki-tefal-ow400100-ow400001-ow400131-ow400230/ [NC]
+    RewriteRule ^(.*)$ /catalog/category-zapchasti-mbt/categoria-hlebopechki/lopatka-testomes-dlya-khlebopechki-tefal-ow400100-ow400001-ow400131-ow400230/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/catalog/category-zapchasti-mbt/category-miksery/komplekt-venchikov-dlya-miksera-braun-7051155/ [NC]
+    RewriteRule ^(.*)$ /catalog/category-zapchasti-mbt/dlia-blenderov-mikserov/komplekt-venchikov-dlya-miksera-braun-7051155/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/category-zapchasti-mbt/category-dlia-miasorubok-kuh-kombajnov/shnek-dlya-myasorubki-kod-ss-989843%20/ [NC]
+    RewriteRule ^(.*)$ /catalog/category-zapchasti-mbt/category-miasorubki/shnek-dlya-myasorubki-kod-ss-989843/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/catalog/category-zapchasti-mbt/category-miasorubki/shesternya-dlya-kyhonogo-kombayna-moulinex-ms-5966508/ [NC]
+    RewriteRule ^(.*)$ /catalog/category-zapchasti-mbt/category-miasorubki/shesternya-bolshaya-kukh-kombayna-moulinex-ms-5966508/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/catalog/nozh-dlya-myasorubki-redmond-rd001-original/ [NC]
+    RewriteRule ^(.*)$ /catalog/category-zapchasti-mbt/category-miasorubki/nozh-dlya-myasorubki-redmond-rd001-original/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/model/myasorubka_bosch_mwf45020/ [NC]
+    RewriteRule ^(.*)$ /model/myasorubka_bosch_mfw_45020/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/category-zapchasti-mbt/category-dlia-miasorubok-kuh-kombajnov/shesterni_dlya_myasorubki_briz_1/ [NC]
+    RewriteRule ^(.*)$ /catalog/category-zapchasti-mbt/category-miasorubki/shesterni_dlya_myasorubki_briz_1/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/category-zapchasti-mbt/category-dlia-miasorubok-kuh-kombajnov/shesternya-dlya-kuhonogo-kombayana-kod-ms-5785581/ [NC]
+    RewriteRule ^(.*)$ /catalog/category-zapchasti-mbt/category-miasorubki/shesternya-dlya-kuhonogo-kombayana-kod-ms-5785581/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/catalog/nozh-dlya-myasorubki-mim-300-mrz-015/ [NC]
+    RewriteRule ^(.*)$ /catalog/category-zapchasti-mbt/category-miasorubki-promihleni/nozh-dlya-myasorubki-mim-300-mrz-015/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/category-zapchasti-mbt/category-dlia-miasorubok-kuh-kombajnov/shesternya-mufta-shneka-dlya-myasorubki-bosch/ [NC]
+    RewriteRule ^(.*)$ /catalog/category-zapchasti-mbt/category-miasorubki/shesternya-mufta-shneka-dlya-myasorubki-bosch/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/catalog/filtr-pod-kolbu-dlya-pylesosa-samsung-/ [NC]
+    RewriteRule ^(.*)$ /catalog/dlia_pylesosa/filtr-pod-kolbu-dlya-pylesosa-samsung-pl075/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/catalog/category-zapchasti-mbt/nozh-dlya-myasorubki-bork-zelmer-moulinex-kenwood/ [NC]
+    RewriteRule ^(.*)$ /catalog/category-zapchasti-mbt/category-miasorubki/nozh-dlya-myasorubki-moulinex-ss-193517a/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/catalog/category-zapchasti-mbt/category-miasorubki/khlebopechka-daewoo-di-3207s/ [NC]
+    RewriteRule ^(.*)$ /model/khlebopechka_daewoo_di_3207s/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/category-zapchasti-mbt/dlia-blenderov-mikserov/myfta-chashi-blendera-shesternya-pauk-braun-kod-7050810/ [NC]
+    RewriteRule ^(.*)$ /catalog/category-zapchasti-mbt/dlia-blenderov-mikserov/myfta-chashi-blendera-shesternya-pauk-braun-kod-7050810/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/category-zapchasti-mbt/nozh-dlya-myasorubk-moulinex-a14-a15/ [NC]
+    RewriteRule ^(.*)$ /catalog/category-zapchasti-mbt/category-miasorubki/nozh-dlya-myasorubki-moulinex-vn005-hv3-original/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/category-zapchasti-mbt/category-dlia-miasorubok-kuh-kombajnov/shesternya-mufta-shneka-dlya-myasorubki-philips/ [NC]
+    RewriteRule ^(.*)$ /catalog/category-zapchasti-mbt/category-miasorubki/shesternya-mufta-shneka-dlya-myasorubki-philips/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/catalog/meshok-mnogorazovyy-dlya-pylesosov-lg-pl057/ [NC]
+    RewriteRule ^(.*)$ /catalog/dlia_pylesosa/meshok-mnogorazovyy-dlya-pylesosov-lg-pl057/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/catalog/predohranitelnaya_mufta_vs020/ [NC]
+    RewriteRule ^(.*)$ /catalog/category-zapchasti-mbt/category-miasorubki/predohranitelnaya_mufta_vs020/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/catalog/lopatka-testomes-dlya-khlebopechki-kenwood-bm250-bm350/ [NC]
+    RewriteRule ^(.*)$ /catalog/category-zapchasti-mbt/categoria-hlebopechki/lopatka-testomes-dlya-khlebopechki-kenwood-bm250-bm350/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/catalog/meshok-mnogorazovyy-dlya-pylesosov-universal-kod-pl032/ [NC]
+    RewriteRule ^(.*)$ /catalog/dlia_pylesosa/meshok-mnogorazovyy-dlya-pylesosov-universal-kod-pl032/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/catalog/reshetka-dlia-miasorubki-braun-vr-007/ [NC]
+    RewriteRule ^(.*)$ /catalog/category-zapchasti-mbt/category-miasorubki/reshetka-dlia-miasorubki-braun-vr-007/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/catalog/lopatka-testomes-dlya-hlebopechki-moulinex-ow2000-ow2001-ow200030-ow200031-ow200032/[NC]
+    RewriteRule ^(.*)$ /catalog/category-zapchasti-mbt/categoria-hlebopechki/lopatka-testomes-dlya-hlebopechki-moulinex-ow2000-ow2001-ow200030-ow200031-ow200032/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/catalog/meshok-mnogorazovyy-dlya-pylesosov-lg-kod-pl036/ [NC]
+    RewriteRule ^(.*)$ /catalog/dlia_pylesosa/meshok-mnogorazovyy-dlya-pylesosov-lg-kod-pl036/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/catalog/datchik-temperatury-dlya-multivarki-redmond-rmc-4503/ [NC]
+    RewriteRule ^(.*)$ /catalog/category-zapchasti-mbt/category-zapchasti-multivarki/datchik-temperatury-dlya-multivarki-redmond-rmc-4503/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/catalog/shesternya-mufta-shneka-dlya-myasorubki-philips/ [NC]
+    RewriteRule ^(.*)$ /catalog/category-zapchasti-mbt/category-miasorubki/shesternya-mufta-shneka-dlya-myasorubki-philips/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/catalog/shesternya-dlya-myasorubki-panasonic-ps007-2/ [NC]
+    RewriteRule ^(.*)$ /catalog/category-zapchasti-mbt/category-miasorubki/shesternya-dlya-myasorubki-panasonic-ps-009/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/catalog/nera-filtr-dlya-moyushchikh-pylesosov-thomas/ [NC]
+    RewriteRule ^(.*)$ /catalog/dlia_pylesosa/nera-filtr-dlya-moyushchikh-pylesosov-thomas/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/catalog/shek-dlia-miasorubki-tefal-tf010/ [NC]
+    RewriteRule ^(.*)$ /catalog/category-zapchasti-mbt/category-miasorubki/shek-dlia-miasorubki-tefal-tf010/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/catalog/uplotnitel-dlya-multivarki-26-sm/ [NC]
+    RewriteRule ^(.*)$ /catalog/category-zapchasti-mbt/category-zapchasti-multivarki/uplotnitel-dlya-multivarki-26-sm/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/catalog/dlya\+stiralnih\+mashin/nasos-askoll-m114/ [NC]
+    RewriteRule ^(.*)$ /catalog/dla_stiralok/nasos-dlya-stiralnoy-mashiny-askoll-m114-25w-3-zashchelki-klemmy-nazad/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/catalog/lopatka-dlya-khlebopechki-liberton-lbm-303/ [NC]
+    RewriteRule ^(.*)$ /catalog/category-zapchasti-mbt/categoria-hlebopechki/lopatka-dlya-khlebopechki-liberton-lbm-303/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/catalog/shesternya-dlya-myasorubki-panasonic-ps007-1/ [NC]
+    RewriteRule ^(.*)$ /catalog/category-zapchasti-mbt/category-miasorubki/shesternya-dlya-myasorubki-panasonic-komplekt/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/catalog/vtulka-dlya-kukh-kombayna-bork-m401/ [NC]
+    RewriteRule ^(.*)$ /catalog/category-zapchasti-mbt/category-miasorubki/vtulka-dlya-kukh-kombayna-bork-m401/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/catalog/disk-derjatel-moolinex-ms-0695608/ [NC]
+    RewriteRule ^(.*)$ /catalog/category-zapchasti-mbt/dlia-blenderov-mikserov/disk-derjatel-moolinex-ms-0695608/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/catalog/reshetka-2-dlia-miasorubki-philips-vr-012/ [NC]
+    RewriteRule ^(.*)$ /catalog/category-zapchasti-mbt/category-miasorubki/reshetka-2-dlia-miasorubki-philips-vr-012/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/catalog/lopatka-dlya-khlebopechki-clatronic-bba-2450/ [NC]
+    RewriteRule ^(.*)$ /catalog/category-zapchasti-mbt/categoria-hlebopechki/lopatka-dlya-khlebopechki-clatronic-bba-2450/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/catalog/meshok-mnogorazovyy-dlya-pylesosov-samsung-kod-pl-056/ [NC]
+    RewriteRule ^(.*)$ /catalog/dlia_pylesosa/meshok-mnogorazovyy-dlya-pylesosov-samsung-kod-pl-056/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/category-zapchasti-mbt/dlia-blenderov-mikserov/ [NC]
+    RewriteRule ^(.*)$ /catalog/category-zapchasti-mbt/dlia-blenderov-mikserov/ [R=301,L]
+
+    RewriteCond %{REQUEST_URI} ^/catalog/category-zapchasti-mbt/category-zapchasti-multivarki/filter/typeproduct-is-banochki_dlja_jogurtnicy/ [NC]
+    RewriteRule ^(.*)$ /catalog/category-zapchasti-mbt/dlya-yogurtnits/filter/typeproduct-is-banochki_dlja_jogurtnicy/ [R=301,L]
+
+    RewriteCond %{REQUEST_URI} ^/catalog/category-zapchasti-mbt/category-zapchasti-multivarki/banochka-1-sht-dlya-yogurtnitsy-tefal-yg65/ [NC]
+    RewriteRule ^(.*)$ /catalog/category-zapchasti-mbt/dlya-yogurtnits/banochka-1-sht-dlya-yogurtnitsy-tefal-yg65/ [R=301,L]
+
+    RewriteCond %{REQUEST_URI} ^/catalog/category-zapchasti-mbt/category-zapchasti-multivarki/banochki-6-sht-dlya-yogurtnitsy-tefal-yg65/ [NC]
+    RewriteRule ^(.*)$ /catalog/category-zapchasti-mbt/dlya-yogurtnits/banochki-6-sht-dlya-yogurtnitsy-tefal-yg65/ [R=301,L]
+
+    RewriteCond %{REQUEST_URI} ^/catalog/category-zapchasti-mbt/category-zapchasti-multivarki/banochki-dlya-yogurtnitsy-moulinex-a14a03/ [NC]
+    RewriteRule ^(.*)$ /catalog/category-zapchasti-mbt/dlya-yogurtnits/banochki-dlya-yogurtnitsy-moulinex-a14a03/ [R=301,L]
+
+    RewriteCond %{REQUEST_URI} ^/category-zapchasti-mbt/ [NC]
+    RewriteRule ^(.*)$ /catalog/category-zapchasti-mbt/ [R=301,L]
+
+    RewriteCond %{REQUEST_URI} ^/bitrix/cache/thumbs/.* [NC]
+    RewriteRule ^bitrix/cache/thumbs/(.*)$ /upload/cache/thumbs/$1 [R=301,L]
+
+    RewriteCond %{REQUEST_URI} ^/model/atlant-mkhm-1707/ [NC]
+    RewriteRule ^(.*)$ /model/atlant-mkhm-170710026/ [R=301,L]
+
+    RewriteCond %{REQUEST_URI} ^/catalog/detail.php [NC]
+    RewriteRule ^catalog/detail.php(.*)$ /catalog/$1 [R=301,L]
+
+    RewriteCond %{REQUEST_URI} ^/news/youtwig.ru [NC]
+    RewriteRule ^news/youtwig.ru(.*)$ /news/$1 [R=301,L]
+
+    RewriteCond %{HTTP_USER_AGENT} libwww-perl.*
+    RewriteRule .* ? [F,L]
+   
+    
+    RewriteCond %{REQUEST_URI} ^/model/$ [NC]
+    RewriteRule ^(.*)$ /info/instruktsii-k-tekhnike/ [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/index.php$ [NC]
+    RewriteRule ^(.*)$ / [R=301,L]
+    RewriteCond %{REQUEST_URI} !\?
+    RewriteCond %{REQUEST_URI} !\&
+    RewriteCond %{REQUEST_URI} !\=
+    RewriteCond %{REQUEST_URI} !\.
+    RewriteCond %{REQUEST_URI} !\/$
+    RewriteCond %{REQUEST_URI} !\/upload
+    RewriteCond %{REQUEST_URI} !\/bitrix
+    RewriteRule ^(.*[^\/])$ /$1/ [R=301,L]
+    RewriteCond %{HTTP_HOST} ^twig\.impel\.pro(.*) [NC]
+    RewriteRule ^(.*)$ https://youtwig.ru/$1 [R=301,L]
+    RewriteCond %{HTTP_HOST} ^twig\.moscow(.*) [NC]
+    RewriteRule ^(.*)$ https://youtwig.ru/$1 [R=301,L]
+    RewriteCond %{HTTP_HOST} ^d6r\.ru(.*) [NC]
+    RewriteRule ^(.*)$ https://youtwig.ru/$1 [R=301,L]
+    RewriteCond %{HTTP_HOST} ^twig77\.com(.*) [NC]
+    RewriteRule ^(.*)$ https://youtwig.ru/$1 [R=301,L]
+    RewriteCond %{REQUEST_URI} /robots\.txt.* [NC]
+    RewriteCond %{HTTP_HOST} ^m\.twig\.su [NC]
+    RewriteRule ^(.*)$ /robots/m.twig.su.txt [L]
+    RewriteCond %{REQUEST_URI} /robots\.txt.* [NC]
+    RewriteCond %{HTTP_HOST} ^youtwig\.ru [NC]
+    RewriteRule ^(.*)$ /robots/youtwig.ru.txt [L]
+    RewriteCond %{REQUEST_URI} /robots\.txt.* [NC]
+    RewriteCond %{HTTP_HOST} ^update\.youtwig\.ru [NC]
+    RewriteRule ^(.*)$ /robots/update.youtwig.ru.txt [L]
+    RewriteCond %{REQUEST_URI} /robots\.txt.* [NC]
+    RewriteCond %{HTTP_HOST} ^m\.youtwig\.ru [NC]
+    RewriteRule ^(.*)$ /robots/m.youtwig.ru.txt [L]
+    RewriteCond %{REQUEST_URI} /robots\.txt.* [NC]
+    RewriteCond %{HTTP_HOST} ^twig\.su [NC]
+    RewriteRule ^(.*)$ /robots/twig.su.txt [L]
+
+
+    RewriteCond %{REQUEST_URI} /feed/rss.xml [NC]
+    RewriteRule ^(.*)$ /feed/index.php [L]
+
+    RewriteCond %{REQUEST_URI} [A-Z]
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-l
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !/tolowercase.php$
+    RewriteRule ^(.*)$ /tolowercase.php [L]
+
+    RewriteCond %{HTTP_HOST} ^5\.45\.68\.15
+    RewriteRule (.*) https://yandex.ru/ [R=301,L]
+
+    RewriteCond %{HTTP_HOST} ^91\.121\.252\.213
+    RewriteRule (.*) https://youtwig\.ru/$1 [R=301,L]
+
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-l
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !/bitrix/urlrewrite.php$
+    RewriteRule ^(.*)$ /bitrix/urlrewrite.php [L]
+    RewriteRule .* - [E=REMOTE_USER:%{HTTP:Authorization}]
+
+
+
+</IfModule>
+
+<IfModule mod_dir.c>
+    DirectoryIndex index.php index.html
+    Order Allow,Deny
+</IfModule>
+
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "access 7 days"
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType text/javascript "access plus 1 year"
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType text/html "access plus 7 day"
+    ExpiresByType text/x-javascript "access 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/x-icon "access 1 year"
+    ExpiresByType application/x-shockwave-flash "access 1 year"
+</IfModule>
+# Cache-Control
+<ifModule mod_headers.c>
+    # 30 дней
+    <filesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|swf)$">
+    Header set Cache-Control "max-age=2592000, public"
+    </filesMatch>
+    # 30 дней
+    <filesMatch "\.(css|js)$">
+    Header set Cache-Control "max-age=2592000, public"
+    </filesMatch>
+    # 2 дня
+    <filesMatch "\.(xml|txt)$">
+    Header set Cache-Control "max-age=604800, public, must-revalidate"
+    </filesMatch>
+    # 1 день
+    <filesMatch "\.(html|htm|php)$">
+    Header set Cache-Control "max-age=604800, private, must-revalidate"
+    </filesMatch>
+</ifModule>

@@ -1,0 +1,40 @@
+.product-list .filter-parameters-box{
+    margin: 0 -25px 30px -10px;
+}
+
+.product-list .filter-title{
+    font-weight: 700;
+}
+
+.product-list .filter-parameters-content a,
+.product-list .filter-title{
+    display: inline-block;
+    margin-bottom: 5px;
+    padding: 2px 20px 3px 10px;
+    font-size: 13px;
+}
+
+.product-list .filter-parameters-content{
+    display: inline;
+}
+
+.product-list .filter-parameters-content a{
+    color: #383838;
+    text-decoration: none;
+}
+
+.product-list .filter-parameters-content a.checked{
+    background: #383838;
+    color: #fff;
+    border-radius: 12px;
+    position: relative;
+}
+
+.product-list .filter-parameters-content a.checked:after{
+    position: absolute;
+    right: 8px;
+    top: 1px;
+    content: "x";
+    font-weight: 700;
+}
+

@@ -1,0 +1,13 @@
+.fastauth-info{
+    margin-bottom:15px
+}
+
+#passcode .form-group{
+    width: 100%;
+    font-size: 0;
+}
+
+#passcode.form-inline .form-control{
+    width: calc(100% - 130px);
+    border-right: transparent;
+}

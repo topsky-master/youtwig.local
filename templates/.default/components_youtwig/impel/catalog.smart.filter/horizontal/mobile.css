@@ -1,0 +1,15 @@
+
+    .bx-filter.horizontal .bx-filter-popup-result .arrow {
+        display: none;
+    }
+
+    .bx-filter.horizontal .bx-filter-parameters-box{
+        overflow: hidden;
+        height: 105px;
+    }
+
+    .bx-filter.horizontal .col-lg-12{
+        padding: 12px 12px 30px 12px;
+    }
+
+

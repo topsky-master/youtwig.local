@@ -1,0 +1,916 @@
+#apiship_pvz {
+	position:         absolute;
+	z-index:          2100;
+	display:          none;
+	background-color: white;
+	overflow:         hidden;
+	font-family:      Arial;
+	width:            96vw;
+	height:           96vh;
+}
+
+#apiship_mask {
+	width:            100%;
+	height:           100%;
+	opacity:          0.8;
+	position:         fixed;
+	z-index:          2000;
+	background-color: black;
+	display:          none;
+	top:              0;
+	padding:          5px;
+}
+
+#apiship_head {
+	height:      25px;
+	clear:       both;
+	padding-top: 7px;
+}
+
+#apiship_description {
+	/*height: 25px;*/
+	line-height: 25px;
+	font-size:   17px;
+	float:       left;
+	color:       #7b7b7b;
+	margin:      -12px 0 5px 14px;
+}
+
+#apiship_description img {
+	height: 42px;
+}
+
+#apiship_logo {
+	background:  url('/bitrix/images/ipol.apiship2v/widjet/logo.png') no-repeat transparent;
+	width:       169px;
+	height:      8px;
+	margin-top:  9px;
+	margin-left: 30%;
+}
+
+#apiship_logo:hover {
+	background-position: 0 -9px;
+}
+
+#apiship_logo a {
+	text-decoration: none;
+	width:           100%;
+	height:          100%;
+	display:         block;
+}
+
+.apiship_content {
+	display: flex;
+}
+
+#apiship_closer {
+	position:   absolute;
+	background: url('/bitrix/images/ipol.apiship2v/widjet/close.png') no-repeat white;
+	height:     22px;
+	width:      22px;
+	right:      15px;
+	top:        15px;
+	z-index:    1000;
+	cursor:     pointer;
+}
+
+#apiship_closer_container {
+	position:   absolute;
+	background-color: white;
+	height:     40px;
+	width:      40px;
+	right:      15px;
+	top:        15px;
+}
+
+#apiship_closer:hover {
+	background-position: 0 -22px;
+}
+
+#apiship_map {
+	float:  left;
+	height: 600px;
+	width:  100%;
+}
+
+/* #apiship_info {
+	float:    left;
+    position: relative;
+    height:   430px;
+    overflow: hidden;
+    width:    260px;
+    color:    black;
+    left:     5px;
+    background-color: white;
+    border-radius:    5px;
+    box-shadow:       0 0 5px #5D5D5D;
+} */
+
+#apiship_sign {
+	height:          38px;
+	line-height:     38px;
+	font-size:       14px;
+	padding-left:    10px;
+	/*background: url('/bitrix/images/ipol.apiship2v/widjet/widjetLogo.png') no-repeat;*/
+	border-bottom:   1px solid #e3e3e3;
+	background-size: contain;
+}
+
+.apiship_delivInfo {
+	height: 36px;
+	font-weight:      bold;
+	font-size:        12px;
+	border-bottom:    1px dashed #e3e3e3;
+	border-top:       1px dashed #e3e3e3;
+	line-height:      35px;
+	padding:          0 9px;
+	background-color: #fafafa;
+	cursor:           pointer;
+	position:         relative;
+    display:          flex;
+	align-items:      center;
+	align-content:    center;
+}
+
+.apiship_provider_img {
+	max-height: 12px;
+}
+
+.apiship_provider_baloon_img {
+	display:  block;
+	position: absolute;
+	height:   15px;
+	top:      10px;
+	left:     12px;
+}
+
+.apiship_delivTerms {
+	display:       inline-block;
+	width:         100%;
+	text-align:    right;
+	padding-right: 12px;
+}
+
+.apiship_delivInfo_arrow {
+	margin-top: 8px;
+}
+
+.apiship_delivInfo.active .apiship_delivInfo_arrow {
+	margin-top: 22px;
+}
+
+.apiship_delivInfo_arrow span {
+	display:           block;
+	width:             14px;
+	height:            14px;
+	border-bottom:     4px solid #337AB7;
+	border-right:      4px solid #337AB7;
+	-moz-transform:    rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	-o-transform:      rotate(45deg);
+	-ms-transform:     rotate(45deg);
+	transform:         rotate(45deg);
+	margin:            -14px 0;
+}
+
+.apiship_delivInfo.active .apiship_delivInfo_arrow span {
+	-moz-transform:    rotate(225deg);
+	-webkit-transform: rotate(225deg);
+	-o-transform:      rotate(225deg);
+	-ms-transform:     rotate(225deg);
+	transform:         rotate(225deg);
+}
+
+.apiship_delivContent {
+	height: 350px;
+	overflow: auto;
+}
+
+.apiship_delivContent.active {
+	display: block;
+}
+
+#apiship_wrapper {
+	height:           392px;
+	overflow:         auto;
+	width:            260px;
+	border:           none;
+	outline:          none;
+	background-color: #fafafa;
+	text-align:       left;
+	scrollbar-width:  thin;
+	scrollbar-color:  #C2BFBE #fafafa;
+}
+#apiship_wrapper::-webkit-scrollbar{
+	width:10px;
+}
+#apiship_wrapper::-webkit-scrollbar-button {
+	display:none;
+}
+#apiship_wrapper::-webkit-scrollbar-track {
+	background-color:#ccc;
+}
+::-webkit-scrollbar-track-piece {
+	background-color:#fafafa;
+}
+#apiship_wrapper::-webkit-scrollbar-thumb {
+	background-color:#C2BFBE;
+}
+#apiship_wrapper::-webkit-scrollbar-thumb:hover {
+	background-color:#5B5958;
+}
+
+#apiship_wrapper p {
+	cursor :   pointer !important;
+	padding:   5px 6px !important;
+	margin:    5px 6px !important;
+	font-size: 12px;
+}
+
+.apiship_chosen {
+	background-color: #ebebeb;
+}
+
+#apiship_ten {
+	position:         relative;
+	top:              -5px;
+	background-color: white;
+	height:           10px;
+	box-shadow:       0 0 5px 5px white;
+	width:            235px;
+	opacity:          0.7;
+	filter:           progid:DXImageTransform.Microsoft.Alpha(opacity=70);
+    -moz-opacity:     0.7;
+    -khtml-opacity:   0.7;
+}
+
+#apiship_baloon {
+	background-color: white;
+	/* width: 258px; */
+	margin-top:       23px;
+	font-family:      Arial;
+	font-size:        12px;
+}
+
+#apiship_baloon > div {
+	margin: 10px 0;
+}
+
+#apiship_baloon > div:last-of-type {
+	margin: 10px 0 5px;
+}
+
+.apiship_baloonDiv a {
+	color:           #666666;
+	text-decoration: none;
+	border-bottom:   1px dashed #666666;
+}
+
+.apiship_baloonDiv a:hover {
+	border-bottom: 1px dashed white;
+}
+
+.apiship_baloonDiv {
+	max-width:    235px;
+	float:        left;
+	text-align:   left;
+}
+
+.apiship_baloonDiv select {
+	width:         100%;
+	max-width:     235px;
+	padding:       5px 3px;
+	margin-bottom: 10px;
+	border:        1px solid #000;
+}
+
+.apiship_icon {
+	float:        left;
+	width:        12px;
+	min-height:   12px;
+	margin-top:   4px;
+	margin-right: 8px;
+}
+
+.apiship_iAdress {
+	font-size: 14px;
+}
+
+.apiship_baloonDiv_features {
+	display:           -webkit-flex;
+	display:           -moz-flex;
+	display:           -ms-flex;
+	display:           -o-flex;
+	display:           flex;
+	-ms-align-items:   center;
+	align-items:       center;
+	-webkit-flex-wrap: wrap;
+	-moz-flex-wrap:    wrap;
+	-ms-flex-wrap:     wrap;
+	-o-flex-wrap:      wrap;
+	flex-wrap:         wrap;
+	margin:            20px 0 10px;
+}
+
+.apiship_baloonDiv_feature {
+	color:   #000;
+	padding: 2px 5px;
+	border:  1px solid #000;
+	margin:  0 3px 3px 0;
+	display: inline-block;
+	/*font-size: 10px;*/
+}
+
+.apiship_baloonDiv_feature.not_available {
+	color:        #aaaaaa;
+	border-color: #f2f2f2;
+	background:   #f2f2f2;
+}
+
+.apiship_iTelephone {
+	background: url('/bitrix/images/ipol.apiship2v/widjet/phone.png') no-repeat;
+}
+
+.apiship_iTime {
+	background: url('/bitrix/images/ipol.apiship2v/widjet/clock.png') no-repeat;
+}
+
+.apiship_iFitting {
+	background: url('/bitrix/images/ipol.apiship2v/widjet/fitting.png') no-repeat;
+}
+
+.apiship_iCash {
+	background: url('/bitrix/images/ipol.apiship2v/widjet/cash.png') no-repeat;
+}
+
+.apiship_iCard {
+	background: url('/bitrix/images/ipol.apiship2v/widjet/card.png') no-repeat;
+}
+
+#apiship_button {
+	width:           130px;
+	height:          25px;
+	background:      url('/bitrix/images/ipol.apiship2v/widjet/chooze.png') 0 0 no-repeat;
+	display:         block;    
+	margin-top: 		 5px;
+	margin-bottom:   10px;
+	text-decoration: none;
+}
+
+#apiship_button:hover {
+	background-position: 0 -25px;
+}
+
+#apiship_head > div {
+	/*font-size: 14px;*/
+	font-family: Arial;
+	/*float:left;*/
+}
+
+#apiship_logoPlace {
+	width:               300px;
+	height:              38px;
+	background-image:    url("/bitrix/images/ipol.apiship2v/apishipogo.png");
+	background-repeat:   no-repeat;
+	background-position: 241px 2px;
+}
+
+#apiship_separator {
+	background-color: #e3e3e3;
+	width:  1px;
+	height: 38px;
+}
+
+.apiship_mark {
+	margin-left: 12px;
+}
+
+.checkout-modal-map__side-bar {
+		min-width: 350px;
+    padding: 10px 15px 10px 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.checkout-modal-map {
+    display: flex;
+    align-items: stretch;
+    overflow: hidden;
+    position: relative;
+}
+
+.checkout-modal-map__header {
+    margin-bottom: 8px;
+}
+
+h3.title-box-checkout {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.pvz-header-block__select-type-pvz {
+	display: flex;
+	position: relative;
+	margin-bottom: 12px;
+}
+
+.pvz-header-block__title {
+    margin-bottom: 24px;
+}
+
+.apiship-search {
+    margin-bottom: 20px;
+		box-sizing: border-box;
+		border-radius: 4px;
+		background-image: url('http://kodyrabatowe.wp.pl/img/ico/search_gr.png');
+		background-size: 16px;
+		background-position: 7px 7px; 
+		background-repeat: no-repeat;
+		padding: 7px 12px 7px 40px;
+}
+
+.pvz-header-search {
+	width: 100%;
+}
+
+.pvz-header-block__select-list {
+	width: 100%;
+	font-size: 16px;
+	line-height: 24px;
+	padding: 7px 12px;
+	border: 1px solid #c7ccd7;
+}
+
+.pvz-header-block__select-list-input {
+	padding-left: 30px;
+}
+
+.apiship-select-control {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    font-family: Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    position: relative;
+    width: 100%;
+    border-radius: 4px;
+    background-color: #fff;
+    background-color: var(--apiship-white);
+}
+
+.apiship-closer-container {
+	padding: 10px;
+}
+
+.apiship-checkbox-control__caption {
+	font-size: 16px;
+	font-weight: 100;
+	margin-left: 6px;
+	margin-right: 10px;   
+	line-height: 24px;
+	color: #7d8290;
+}
+
+.pvz-select-type .apiship-select-control__button {
+    justify-content: flex-start;
+}
+
+.apiship-select-control__button {
+    background-color: transparent;
+    cursor: pointer;
+    font-family: inherit;
+    color: inherit;
+    outline: none;
+    font-size: 16px;
+    line-height: 24px;
+    width: 100%;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    border-radius: 4px;
+    border: 1px solid #c7ccd7;
+    /* border: 1px solid var(--apiship-gray-light); */
+    background-color: #fff;
+    /* background-color: var(--apiship-white); */
+    color: #242424;
+    color: var(--apiship-black);
+    padding: 7px 12px;
+    text-align: left;
+}
+
+.pvz-select-type .apiship-select-control__text-button {
+    flex: 0 0 auto;
+}
+
+.apiship-select-control__text-button+.apiship-select-control__slot {
+    margin-left: 12px;
+}
+
+.apiship-select-control__slot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.pvz-select-type__label {
+    cursor: pointer;
+}
+
+.address-list__item-btn-small {
+	background-color: #6ebc63;
+	color: white;
+	font-size: 16px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.apiship-btn-more {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: transparent;
+	border: 0;
+	padding: 24px 0;
+	color: #3d70b2;
+	font-size: 16px;
+	border-top: 1px solid #c7ccd7;
+	border-bottom: 1px solid #c7ccd7;
+
+}
+
+.filter-list-pvz {
+    display: flex;
+    align-items: center;
+}
+
+.filter-list-pvz__tag-desc {
+    font-size: 16px;
+    line-height: 24px;
+    color: #7d8290;
+}
+
+.filter-list-pvz__tag-item {
+    margin-left: 16px;
+
+}
+
+.apiship-checkbox-control {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: #c7ccd7;
+    display: block;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		
+}
+
+.apiship-checkbox {
+	box-sizing: border-box;
+	margin-right: 8px;
+	margin-top: 0;
+	width: 20px;
+	height: 20px;
+	font-size: 16px;
+}
+
+.b24-checkbox-control__control {
+	position: absolute;
+	z-index: -1;
+	opacity: 0;
+}
+
+/* For Map List */
+.checkout-modal-map__list {
+    overflow-y: auto;
+}
+
+.address-list {
+    position: relative;
+}
+
+.address-list__item+.address-list__item {
+	border-top: 1px solid #c7ccd7;
+}
+
+.address-list._d .address-list__item {
+    margin-right: 16px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.address-item._d._viewed {
+    cursor: pointer;
+}
+
+.address-list__item {
+    padding: 3px;
+}
+
+.address-item._d .address-item__metro {
+    margin-bottom: 0;
+}
+
+.address-item__metro-text {
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.address-item._d .address-item__delivery {
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.address-item__delivery {
+    margin-bottom: 8px;
+}
+
+.address-item__delivery-text._free {
+    color: #6ebc63;
+}
+
+.address-item__point {
+    font-size: 14px;
+    line-height: 24px;
+    color: #7d8290;
+}
+
+.address-item__point {
+    font-size: 14px;
+    line-height: 24px;
+    color: #7d8290;
+}
+
+.apiship-notification {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    font-family: Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-radius: 4px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.address-item._d._viewed {
+    cursor: pointer;
+}
+
+.apiship-btn._small {
+    height: 32px;
+    padding: 0 4px;
+    font-weight: 400;
+}
+
+.apiship-btn._small {
+    line-height: 30px;
+}
+
+.address-list__item-btn {
+    width: 150px;
+}
+
+.apiship-btn {
+    background-color: transparent;
+    cursor: pointer;
+    font-family: inherit;
+    outline: none;
+    text-decoration: none;
+    color: inherit;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    font-family: Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    display: inline-flex;
+    text-align: center;
+    justify-content: center;
+    line-height: inherit;
+    height: 32px;
+    padding: 0 16px;
+    background-color: #6ebc63;
+    border: 1px solid #6ebc63;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+    overflow: hidden;
+    transition: opacity .3s, color .3s, background-color .3s, border-color .3s;
+}
+
+.apiship-btn__content, .apiship-btn__loading {
+    display: flex;
+    align-items: center;
+}
+
+.apiship-input-control__container {
+	position: relative;
+	box-sizing: border-box;
+	display: flex;
+	width: 100%;
+	background: #fff;
+	border: 1px solid #c7ccd7;
+	border-radius: 4px;
+	padding: 0;
+	height: 40px;
+	transition: background .3s, border-color .3s;
+}
+
+.apiship-input-control__controls-list {
+	display: flex;
+	align-items: center;
+	position: absolute;
+	transform: translateY(-50%);
+	top: 20px;
+	left: 10px;
+}
+
+.apiship-input-control__control-icon {
+	fill: #aeb4c2;
+	transition: fill .3s;
+}
+
+.apiship-input-control__wrapper {
+	position: relative;
+	width: 100%;
+	display: flex;
+}
+
+.head-block-content {
+	display: flex;
+}
+
+#apiship_pvz_container {
+	display: flex;
+}
+
+@media (max-width: 800px) {
+	#apiship_map {
+			height:   91%;
+			overflow: hidden;
+	}
+
+	#apiship_logo {
+			background-position: center 0;
+			margin-top: 7px;
+	}
+
+	#apiship_pvz {
+			width:      100vm !important;
+			height: 100vh !important;
+			box-sizing: border-box;
+	}
+
+	#apiship_pvz_container {
+			display: block;
+	}
+
+	#apiship_map .ymaps-2-1-74-map {
+			width:  100% !important;
+			height: 100% !important;
+	}
+
+	#apiship_sign {
+			overflow:    hidden;
+			cursor:      pointer;
+			height:      28px;
+			line-height: 28px;
+			position:    relative;
+			font-size:   12px;
+	}
+
+	#apiship_sign:after {
+			content:             "";
+			transition:          all .2s linear;
+			transform-origin:    center center;
+			display:             block;
+			height:              100%;
+			width:               20px;
+			background-repeat:   no-repeat;
+			background-position: center center;
+			position:            absolute;
+			right:               10px;
+			top:                 0;
+			z-index:             1;
+			background-image:    url(img/arrow.svg);
+			background-size:     100%;
+	}
+
+	.expanded #apiship_sign:after {
+			transform: rotate(180deg);
+	}
+			
+	.head-block-content {
+		display: flex;
+	}
+			
+	.modal-pvz-header {
+		display: flex;
+		align-items: center;
+		margin: 5px 0px;
+		padding: 5px 15px;
+	}
+
+	.modal-pvz-header__back {
+		border: 0;
+		background-color: transparent;
+		font-family: inherit;
+		color: inherit;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: #aeb4c2;
+		transition: color .3s;
+		padding: 0 8px 0 0;
+	}
+
+	.modal-pvz-header__title {
+		font-weight: inherit;
+		font-size: inherit;
+		line-height: inherit;
+		font-size: 20px;
+		line-height: 28px;
+		margin: auto;
+		text-align: center;
+		font-weight: 600;
+		color: #242424;
+	}
+
+	.modal-pvz-header__switch {
+		border: 0;
+		background-color: transparent;
+		padding: 0;
+		font-family: inherit;
+		text-decoration: none;
+		color: inherit;
+		color: #3d70b2;
+		transition: color .3s;
+		font-size: 16px;
+		line-height: 24px;
+	}
+	
+	.checkout-modal-map__side-bar {
+		padding: 0px;
+	}
+
+	.pvz-header-block__select-type-pvz {
+		padding: 0px 15px;
+	}
+
+	.apiship_delivContent {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 350px) {
+    /* #apiship_info {
+        width: 220px;
+    } */
+}
+/* Custom select container */
+.custom-select-container {
+	width: 300px;
+	position: relative;
+	font-family: Arial, sans-serif;
+}
+
+/* The element that looks like the select box */
+.custom-select-trigger {
+	background-color: white;
+	border: 1px solid #ccc;
+	padding: 10px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+}
+
+/* Options dropdown */
+.custom-options {
+	display: none;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 100%;
+	border: 1px solid #ccc;
+	background-color: white;
+	z-index: 100;
+}
+
+/* Individual option */
+.custom-option {
+	padding: 10px;
+	display: flex;
+	justify-content: space-between;
+	cursor: pointer;
+}
+
+/* Hover effect for options */
+.custom-option:hover {
+	background-color: #f0f0f0;
+}
+
+/* Show options when dropdown is active */
+.active .custom-options {
+	display: block;
+}

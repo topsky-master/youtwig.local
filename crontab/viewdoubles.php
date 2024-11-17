@@ -1,0 +1,3 @@
+<?php $sDoubles = array (
+  '' => NULL,
+); ?>

@@ -1,0 +1,111 @@
+.b-crumbs {
+    padding-bottom: 26px;
+}
+
+@media screen and (max-width: 767px) {
+    .b-crumbs {
+        width: calc(100% - 32px);
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    html .b-crumbs {
+        margin-top: -20px;
+    }
+}
+
+.snap-slider {
+    position: relative;
+}
+
+.b-crumbs .snap-slider__slider {
+    -ms-scroll-snap-type: none;
+    scroll-snap-type: none;
+    box-sizing: border-box;
+}
+
+.b-crumbs .snap-slider__item a {
+    box-sizing: border-box;
+    display: inline-block;
+    white-space: nowrap;
+    border-radius: 4px;
+    border: 1px solid #383838;
+    color: #383838;
+    padding: 6px 5px;
+    margin: 0 0 0 15px;
+    text-decoration: none;
+    transition: all 300ms linear;
+}
+
+.b-crumbs .snap-slider__item {
+    box-sizing: border-box;
+    display: inline-block;
+}
+
+.b-crumbs .snap-slider__item:first-of-type a,
+.b-crumbs .snap-slider__item:first-child a {
+    margin-left: 0;
+}
+
+.snap-slider__slider {
+    display: flex;
+    width: 100%;
+    overflow-x: scroll;
+    box-sizing: border-box;
+}
+
+.snap-slider__slider::-webkit-scrollbar {
+    display: none;
+}
+
+.snap-slider__slider {
+    -ms-scroll-snap-type: both mandatory;
+    scroll-snap-type: both mandatory;
+    scrollbar-width: none !important;
+}
+
+.snap-slider__item {
+    scroll-snap-align: start;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: pointer;
+}
+
+.b-crumbs {
+    margin: 0 auto 4px;
+}
+
+.snap-slider__item.active__item a {
+    color: #19a5cc;
+    border-color: #19a5cc;
+    transition: all 300ms linear;
+}
+
+.no-touch .snap-slider {
+    width: 100%;
+    overflow: hidden;
+    overflow-x: auto;
+    margin-inline-start: 10px;
+}
+
+.no-touch .snap-slider__slider {
+    width: auto;
+    overflow: hidden;
+    display: inline-block;
+    white-space: nowrap;
+    font-size: 0;
+}
+
+.no-touch .snap-slider::-webkit-scrollbar {
+    display: none;
+}
+
+.no-touch .snap-slider {
+    -ms-scroll-snap-type: both mandatory;
+    scroll-snap-type: both mandatory;
+    scrollbar-width: none !important;
+}
+
+.no-touch .snap-slider__item a {
+    font-size: 13px;
+}

@@ -1,0 +1,477 @@
+#apiship_pvz {
+    background-color: white;
+    padding:          10px 3px;
+    overflow:         hidden;
+    font-family:      Arial;
+    width:            100%;
+}
+
+#IPOLAPISHIP_FORM {
+    position: relative;
+}
+
+#apiship_mask {
+    width:            100%;
+    height:           100%;
+    opacity:          0.8;
+    position:         fixed;
+    z-index:          2000;
+    background-color: black;
+    display:          none;
+    top:              0;
+    padding:          5px;
+}
+
+#apiship_head {
+    height:      35px;
+    clear:       both;
+    padding-top: 7px;
+}
+
+#apiship_logo {
+    background: url('/bitrix/images/ipol.apiship2v/widjet/logo.png') no-repeat transparent;
+    width:      169px;
+    height:     8px;
+}
+
+#apiship_logo:hover {
+    background-position: 0 -9px;
+}
+
+#apiship_logo a {
+    text-decoration: none;
+    width:           100%;
+    height:          100%;
+    display:         block;
+}
+
+#apiship_closer {
+    position:   absolute;
+    background: url('/bitrix/images/ipol.apiship2v/widjet/close.png') no-repeat transparent;
+    height:     22px;
+    width:      22px;
+    right:      15px;
+    top:        18px;
+    z-index:    1000;
+    cursor:     pointer;
+}
+
+#apiship_closer:hover {
+    background-position: 0 -22px;
+}
+
+#apiship_map {
+    float:  left;
+    height: 500px;
+    width:  100%;
+}
+
+#apiship_info {
+    position: absolute;
+    bottom:   90px;
+    height:   auto;
+    overflow: hidden;
+    width:    260px;
+    color:    black;
+    left:     5px;
+    background-color: white;
+    border-radius:    5px;
+    box-shadow:       0 0 5px #5D5D5D;
+}
+
+#apiship_sign {
+    height:       38px;
+    line-height:  38px;
+    font-size:    14px;
+    padding-left: 98px;
+    background:   url('/bitrix/images/ipol.apiship2v/widjet/logo2.png') no-repeat 10px;
+    border-bottom:   1px solid #e3e3e3;
+    background-size: contain;
+}
+
+.apiship_delivInfo {
+    height:           36px;
+    font-weight:      bold;
+    font-size:        12px;
+    border-bottom:    1px dashed #e3e3e3;
+    border-top:       1px dashed #e3e3e3;
+    line-height:      35px;
+    padding:          0 9px;
+    background-color: #fafafa;
+    cursor:           pointer;
+    position:         relative;
+    display:          flex;
+    align-items:      center;
+    align-content:    center;
+}
+
+.apiship_provider_img {
+    max-height:       12px;
+}
+
+.apiship_provider_baloon_img {
+    display:  block;
+    position: absolute;
+    height:   15px;
+    top:      10px;
+    left:     12px;
+}
+
+.apiship_delivTerms {
+    display:       inline-block;
+    width:         100%;
+    text-align:    right;
+    padding-right: 12px;
+}
+
+.apiship_delivInfo_arrow {
+    margin-top: 8px;
+}
+
+.apiship_delivInfo.active .apiship_delivInfo_arrow {
+    margin-top: 22px;
+}
+
+.apiship_delivInfo_arrow span {
+    display:           block;
+    width:             14px;
+    height:            14px;
+    border-bottom:     4px solid #337AB7;
+    border-right:      4px solid #337AB7;
+    -moz-transform:    rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -o-transform:      rotate(45deg);
+    -ms-transform:     rotate(45deg);
+    transform:         rotate(45deg);
+    margin:            -14px 0;
+}
+
+.apiship_delivInfo.active .apiship_delivInfo_arrow span {
+    -moz-transform:    rotate(225deg);
+    -webkit-transform: rotate(225deg);
+    -o-transform:      rotate(225deg);
+    -ms-transform:     rotate(225deg);
+    transform:         rotate(225deg);
+}
+
+.apiship_delivContent {
+    display: none;
+}
+
+.apiship_delivContent.active {
+    display: block;
+}
+
+#apiship_wrapper {
+    height:   392px;
+    overflow: auto;
+    width:    260px;
+    border:   none;
+    outline:  none;
+    background-color: #fafafa;
+    text-align:       left;
+    scrollbar-width:  thin;
+    scrollbar-color:  #C2BFBE #fafafa;
+}
+#apiship_wrapper::-webkit-scrollbar{
+    width:10px;
+}
+#apiship_wrapper::-webkit-scrollbar-button {
+    display:none;
+}
+#apiship_wrapper::-webkit-scrollbar-track {
+    background-color:#ccc;
+}
+::-webkit-scrollbar-track-piece {
+    background-color:#fafafa;
+}
+#apiship_wrapper::-webkit-scrollbar-thumb {
+    background-color:#C2BFBE;
+}
+#apiship_wrapper::-webkit-scrollbar-thumb:hover {
+    background-color:#5B5958;
+}
+
+#apiship_wrapper p {
+    cursor :   pointer;
+    padding:   5px 6px;
+    margin:    5px 6px;
+    font-size: 12px;
+}
+
+.apiship_chosen {
+    background-color: #ebebeb;
+}
+
+#apiship_ten {
+    position:         relative;
+    top:              -5px;
+    background-color: white;
+    height:           10px;
+    box-shadow:       0 0 5px 5px white;
+    width:            235px;
+    opacity:          0.7;
+    filter:           progid:DXImageTransform.Microsoft.Alpha(opacity=70);
+    -moz-opacity:    0.7;
+    -khtml-opacity:  0.7;
+}
+
+#apiship_baloon {
+    background-color: white;
+    margin-top:       23px;
+    font-family:      Arial;
+    font-size:        12px;
+}
+
+#apiship_baloon > div {
+    margin: 10px 0;
+}
+
+#apiship_baloon > div:last-of-type {
+    margin: 10px 0 5px;
+}
+
+.apiship_baloonDiv a {
+    color:           #666666;
+    text-decoration: none;
+    border-bottom:   1px dashed #666666;
+}
+
+.apiship_baloonDiv {
+    max-width:    235px;
+    float:        left;
+    text-align:   left;
+}
+
+.apiship_icon {
+    float:        left;
+    width:        12px;
+    min-height:   12px;
+    margin-top:   4px;
+    margin-right: 8px;
+}
+
+.apiship_iAdress {
+    font-size: 14px;
+}
+
+.apiship_baloonDiv_features {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    -ms-align-items:   center;
+    align-items:       center;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap:    wrap;
+    -ms-flex-wrap:     wrap;
+    -o-flex-wrap:      wrap;
+    flex-wrap:         wrap;
+    margin:            20px 0 10px;
+}
+
+.apiship_baloonDiv_feature {
+    color:   #000;
+    padding: 2px 5px;
+    border:  1px solid #000;
+    margin:  0 3px 3px 0;
+    display: inline-block;
+    /*font-size: 10px;*/
+}
+
+.apiship_baloonDiv_feature.not_available {
+    color:        #aaaaaa;
+    border-color: #f2f2f2;
+    background:   #f2f2f2;
+}
+
+.apiship_iTelephone {
+    background: url('/bitrix/images/ipol.apiship2v/widjet/phone.png') no-repeat;
+}
+
+.apiship_iTime {
+    background: url('/bitrix/images/ipol.apiship2v/widjet/clock.png') no-repeat;
+}
+
+.apiship_iFitting {
+    background: url('/bitrix/images/ipol.apiship2v/widjet/fitting.png') no-repeat;
+}
+
+.apiship_iCash {
+    background: url('/bitrix/images/ipol.apiship2v/widjet/cash.png') no-repeat;
+}
+
+.apiship_iCard {
+    background: url('/bitrix/images/ipol.apiship2v/widjet/card.png') no-repeat;
+}
+
+#apiship_button {
+    width:      130px;
+    height:     25px;
+    background: url('/bitrix/images/ipol.apiship2v/widjet/chooze.png') 0 0 no-repeat;
+    display:    block;
+    margin:     auto;
+    text-decoration: none;
+}
+
+#apiship_button:hover {
+    background-position: 0 -25px;
+}
+
+#apiship_title {
+    padding-bottom: 12px;
+    border-bottom:  1px solid #e5e5e5;
+    width:          100%;
+}
+
+#apiship_title > div,#apiship_cityPicker > div {
+    font-size:   12px;
+    font-family: Arial;
+}
+
+#apiship_cityPicker > div {
+    float: left;
+}
+
+#apiship_cityPicker > div:first-child {
+    padding-top:   9px;
+    margin-bottom: 10px;
+}
+
+#apiship_cityPicker {
+    width: 300px;
+    float: left;
+}
+
+#apiship_citySel {
+    display: none;
+}
+
+#apiship_citySel_converted {
+    width: 400px;
+}
+
+#apiship_citySel_converted .bx-ui-sls-input-block {
+    height: 35px;
+}
+
+#apiship_cityName {
+    text-decoration: none;
+    border-bottom:  1px dotted #007ACF;
+}
+
+#apiship_cityLabel {
+    padding: 9px 12px 0 12px;
+}
+
+#apiship_cityLabel a {
+    margin-bottom: 9px;
+    color:         #3366CC;
+    display:       block;
+}
+
+#apiship_cityLabel a:hover {
+    color:           #24478F;
+    text-decoration: none !important;
+}
+
+#apiship_cityLabel:hover {
+    /*
+    background: #FFFFFF;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.506);
+    position:   absolute;
+    z-index:    100;
+    */
+}
+
+#apiship_cityLabel:hover > #apiship_citySel {
+    /*
+    display: block;
+    */
+}
+
+#apiship_cityLabel:hover > #apiship_cityName {
+    text-decoration: underline;
+    border-bottom:   none;
+}
+
+.apiship_mark {
+    height:      32px;
+    width:       135px;
+    line-height: 20px;
+    cursor:      default;
+    text-align:  right;
+    float:       right;
+}
+
+.apiship_mark table {
+    border-collapse: collapse;
+    width:           80%;
+}
+
+#apiship_logoPlace {
+    width:  300px;
+    height: 38px;
+    background-image:    url("/bitrix/images/ipol.apiship2v/apishipogo.png");
+    background-repeat:   no-repeat;
+    background-position: 241px 2px;
+}
+
+#apiship_separator{
+    background-color: #e3e3e3;
+    width:            1px;
+    height:           38px;
+}
+
+#apiship_citySel .search-suggest {
+    margin-top: 0;
+    padding:    0;
+}
+
+@media (max-width: 800px) {
+    #apiship_info {
+        height: 28px;
+    }
+
+    #apiship_info.expanded {
+        height: auto;
+    }
+
+    #apiship_sign {
+        overflow:     hidden;
+        cursor:       pointer;
+        height:       28px;
+        line-height:  28px;
+        position:     relative;
+        padding-left: 75px;
+        font-size:    12px;
+    }
+
+    #apiship_sign:after {
+        content:             "";
+        transition:          all .2s linear;
+        transform-origin:    center center;
+        display:             block;
+        height:              100%;
+        width:               20px;
+        background-repeat:   no-repeat;
+        background-position: center center;
+        position:            absolute;
+        right:               10px;
+        top:                 0;
+        z-index:             1;
+        background-image:    url(img/arrow.svg);
+        background-size:     100%;
+    }
+
+    .expanded #apiship_sign:after {
+        transform: rotate(180deg);
+    }
+}
+
+@media screen and (max-width: 350px) {
+    #apiship_info {
+        width: 220px;
+    }
+}

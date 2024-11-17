@@ -1,0 +1,12 @@
+.inframe.f112ep-perevod.large #panel,
+.inframe.konvert #panel{
+
+	display: none;
+
+}
+
+.inframe.f112ep-perevod.large .bg,
+.inframe.konvert.large .bg{
+	top: auto;
+	overflow: hidden;
+}

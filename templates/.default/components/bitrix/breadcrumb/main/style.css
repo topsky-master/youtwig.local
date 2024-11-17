@@ -1,0 +1,63 @@
+div.breadcrumb{
+    font-size: 12px;
+    font-weight: normal;
+    color: #202326;
+    background: none;
+    padding: 0;
+    display: block;
+    float: left;
+    width: 100%;
+    clear: both;
+
+}
+
+.breadcrumb-wrapper{
+    margin: 0;
+    border: 1px solid #E8E8E8;
+    border-radius: 4px;
+    background: #fff;
+}
+
+.seo-text-wrapper{
+    margin-top: 15px;
+}
+
+div.breadcrumb ul.breadcrumb-navigation-main li a>span:after{
+    display: inline-block;
+    content: " / ";
+    padding: 0 8px;
+    color: #626262;
+}
+
+div.breadcrumb ul.breadcrumb-navigation-main{
+    display: block;
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    float: left;
+    clear: both;
+}
+
+div.breadcrumb ul.breadcrumb-navigation-main li{
+    display: inline;
+    margin: 0;
+
+}
+
+div.breadcrumb ul.breadcrumb-navigation-main li a,
+div.breadcrumb ul.breadcrumb-navigation-main li a:focus,
+div.breadcrumb ul.breadcrumb-navigation-main li a:hover{
+    color: #111;
+    text-decoration: none;
+}
+
+div.breadcrumb ul.breadcrumb-navigation-main li:last-child span:after{
+    display: none;
+}
+
+div.breadcrumb .breadcrumb-wrapper > div:first-child{
+    padding-top: 11px;
+    padding-bottom: 11px;
+}

@@ -1,0 +1,94 @@
+#mu-menu, #mu-menu ul, #mu-menu li{
+	display: block;
+	padding: 0;
+	margin: 0;
+}
+
+#mu-menu li{
+	border-top: 1px solid #c1c1c1;
+}
+
+#mu-menu{
+	border-bottom: 1px solid #c1c1c1;
+}
+
+#mu-menu input{
+	display: none;
+}
+
+#mu-menu li label,
+#mu-menu li a{
+	margin: 0;
+	display: block;
+	padding: 12px 35px 12px 15px;
+	background: #fff;
+	cursor: pointer;
+	position: relative;
+	box-sizing: border-box;
+}
+
+#mu-menu li label::after,
+#mu-menu li label::before{
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 1px;
+    background: #111;
+    top: 50%;
+    right: 13px;
+    transition: all .5s ease;
+}
+
+#mu-menu li label::before{
+    margin-top: -2px;
+    transform: rotate(45deg);
+}
+
+#mu-menu li label::after{
+    margin-top: 2px;
+    transform: rotate(-45deg);
+}
+
+
+#mu-menu input:checked + label::before{
+    transform: rotate(-45deg);
+    top: 56%;
+}
+
+#mu-menu input:checked + label::after{
+    right: 17px;
+    transform: rotate(45deg);
+}
+
+#mu-menu li li label,
+#mu-menu li li a{
+	padding-left: 30px;
+}
+
+#mu-menu li li li label,
+#mu-menu li li li a{
+	padding-left: 45px;
+}
+
+#mu-menu li li li li label,
+#mu-menu li li li li a{
+	padding-left: 60px;
+}
+
+#mu-menu li li li li li label,
+#mu-menu li li li li li a{
+	padding-left: 75px;
+}
+
+#mu-menu ul{
+	display: none;
+}
+
+#mu-menu input:checked + label + ul{
+	display: block;
+}
+
+#mu-menu > li.fbold > label,
+#mu-menu li.fbold > a{
+	font-weight: bold;
+}

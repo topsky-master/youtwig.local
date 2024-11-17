@@ -1,0 +1,46 @@
+div.view-list {
+}
+div.view-item {
+}
+
+div.view-list h3.product-name{
+    margin-top: 0!important;
+    margin-bottom: 0!important;
+    padding: 0!important;
+}
+
+div.view-item{
+    margin: 5px 0;
+    padding: 10px 0;
+
+    background: #fff;
+
+}
+
+div.view-item .inner-padding{
+}
+
+div.view-item .inner-padding > div{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+div.view-item .inner-padding > div:first-child{
+    padding-right: 15px;
+}
+
+div.view-item a{
+    font-size: 12px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+div.view-item a:hover{
+    color: #2db9dd;
+}
+
+div.view-item img{
+    border: 1px solid #d1d1d1;
+}
+

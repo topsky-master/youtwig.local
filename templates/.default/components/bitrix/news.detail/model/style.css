@@ -1,0 +1,207 @@
+html body #columns{
+    background: #fff;
+}
+
+html body div.about-model-area .title-row{
+    border: none;
+}
+
+html body div.about-model-area div.about-model-download div.about-instruction{
+    padding: 24px 15px 15px 15px;
+}
+
+html body div.about-model-area p.indcode-choose-mod{
+    font-weight: bold;
+}
+
+html body div.about-model-area .indcode-list li{
+    display: block;
+    padding: 0;
+    margin: 0 0 10px 0;
+}
+
+html body div.about-model-area .indcode-list li a{
+    color: #000;
+    text-decoration: none;
+}
+
+html body .products-list-info .views{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+html body .products-list-info .views:after,
+html body .products-list-info .views:before{
+    display: none;
+    visibility: hidden;
+}
+
+html body .products-list-info .views > div{
+    position: relative;
+    margin: 0 15px 30px 15px;
+    width: calc(25% - 30px);
+    border: 1px solid #ebebeb;
+}
+
+html body .products-list-info #view-preview{
+    margin: 0;
+}
+
+html body div.about-model-area div.about-model-download img,
+html body .products-list-info #view-preview > .img-responsive{
+    border: 1px solid #ebebeb;
+}
+
+html body .products-list-info #view-preview .hide-scheme{
+    margin-top: 15px;
+}
+
+html body #view-preview{
+    position: relative;
+}
+
+html body #view-preview > .hide-view,
+html body .products-list-info .views > div .hide-view{
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #86b817;
+    color: #fff;
+    font-size: 15px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    cursor: pointer;
+    text-decoration: none;
+    flex-wrap: wrap;
+}
+
+html body .row.title-row{
+    padding-top: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+html body .bx_catalog_list_top > .row > input,
+html body .bx_catalog_list_top > .row:after,
+html body .bx_catalog_list_top > .row:before{
+    display: none;
+    visibility: hidden;
+}
+
+html body .bx_catalog_list_top > .row{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    -webkit-align-items: stretch;
+    justify-content: flex-start;
+    margin-left: 0!important;
+    margin-right: 0!important;;
+}
+
+html .about-model-area .bx_catalog_item_price{
+    position: absolute;
+    left: 15px;
+    bottom: 15px;
+}
+
+html .about-model-area .bx_catalog_item_controls .col-lg-4{
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+}
+
+html body .bx_catalog_list_top > .row > div{
+    border-bottom: 1px solid #ebebeb;
+    border-left: 1px solid #ebebeb;
+    margin: 0;
+    align-self: auto;
+    padding: 15px;
+    position: relative;
+}
+
+html body .bx_catalog_list_top > .row > div:after{
+    content: " ";
+    display: block;
+    left: 0;
+    right: 0;
+    top: -1px;
+    border-top: 1px solid #ebebeb;
+    position: absolute;
+}
+
+html body div.about-model-area div.about-model-download .download-instruction a{
+    border-color: #ebebeb;
+}
+
+html body .bx_catalog_list_top > .row > div:before{
+    content: " ";
+    display: block;
+    top: 0;
+    bottom: 0;
+    right: -1px;
+    border-right: 1px solid #ebebeb;
+    position: absolute;
+}
+
+html body .bx_catalog_list_top > .row .bx_catalog_item_images{
+    padding: 0;
+    border: none;
+}
+
+html body .breadcrumb-wrapper > div,
+html body .breadcrumb-wrapper{
+    border: none;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+html body .products-list-info .hide-scheme{
+    text-align: center;
+    color: #a3a9ad;
+    display: block;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+html body .products-list-info .bx-filter.horizontal .col-lg-12{
+    margin: 0 -7px!important;
+    border: 0!important;
+    padding-left: 0!important;
+    padding-right: 0!important;
+}
+
+html body .products-list-info .on_stock{
+    
+}
+
+html body .products-list-info .form-group{
+    margin-bottom: 0!important;
+}
+
+html body .products-list-info .bx_catalog_item_price{
+    text-align: left!important;
+}
+
+html body div.about-model-area .indcode-list li a.active{
+    background: #383838;
+    border-radius: 34px;
+    color: #fff;
+    padding: 0 7px;
+    display: inline-block;
+	margin-left: -7px;
+}
+
+html body div.about-model-area .indcode-list li a.active:after{
+    content: "x";
+    color: #fff;
+    display: block;
+    margin: 0 0 0 8px;
+    float: right;
+    width: auto;
+    font-weight: bold;
+    margin-top: -1px;
+}

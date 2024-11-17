@@ -1,0 +1,30 @@
+.choose-area-selects{
+	background: #fff;
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 15px;
+}
+
+#choose-area.choose-area .block-title h2{
+	margin: 0;
+}
+
+#choose-area.choose-area label{
+	cursor: pointer;
+}
+
+
+@media screen and (min-width: 1024px){
+	#choose-area.choose-area div.col-md-3 + div + div:not(:last-child){
+		border-right: 1px dashed #c9c9d8;
+	}
+
+	#choose-area.choose-area .choose-area-selects{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+}
+
+

@@ -1,0 +1,25 @@
+<?
+$aMenuLinks = Array(
+	Array(
+		"Отзывы", 
+		"https://youtwig.ru/comments/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Статьи", 
+		"https://youtwig.ru/articles/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Новости", 
+		"https://youtwig.ru/novosti/", 
+		Array(), 
+		Array(), 
+		"" 
+	)
+);
+?>

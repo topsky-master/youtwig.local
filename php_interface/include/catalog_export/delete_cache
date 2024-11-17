@@ -1,0 +1,32 @@
+#!/bin/sh
+FILESYSTEM=/var/www/ # or whatever filesystem to monitor
+CAPACITY=95 # delete if FS is over 95% of usage
+CACHEDIR=/var/www/twig/data/www/youtwig.ru/bitrix/cache/
+CACHEDIR1=/var/www/twig/data/www/youtwig.ru/bitrix/html_pages/m.youtwig.ru/
+CACHEDIR2=/var/www/twig/data/www/youtwig.ru/bitrix/html_pages/youtwig.ru/
+
+# Proceed if filesystem capacity is over than the value of CAPACITY (using df POSIX syntax)
+# using [ instead of [[ for better error handling.
+if [ $(df -P $FILESYSTEM | awk '{ gsub("%",""); capacity = $5 }; END { printf capacity }') -gt $CAPACITY ]
+then
+# lets do some secure removal (if $CACHEDIR is empty or is not a directory find will exit
+# with error which is quite safe for missruns.):
+find "$CACHEDIR" -xdev -maxdepth 1 -type f -delete;
+# remove "maxdepth and type" if you want to do a recursive removal of files and dirs
+find "$CACHEDIR" -xdev -delete;
+
+# lets do some secure removal (if $CACHEDIR1 is empty or is not a directory find will exit
+# with error which is quite safe for missruns.):
+find "$CACHEDIR1" -xdev -maxdepth 1 -type f -delete;
+# remove "maxdepth and type" if you want to do a recursive removal of files and dirs
+find "$CACHEDIR1" -xdev -delete;
+
+# lets do some secure removal (if $CACHEDIR2 is empty or is not a directory find will exit
+# with error which is quite safe for missruns.):
+find "$CACHEDIR2" -xdev -maxdepth 1 -type f -delete;
+# remove "maxdepth and type" if you want to do a recursive removal of files and dirs
+find "$CACHEDIR2" -xdev -delete;
+
+echo "executed";
+
+fi

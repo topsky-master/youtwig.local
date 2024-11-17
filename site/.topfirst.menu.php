@@ -1,0 +1,39 @@
+<?
+$aMenuLinks = Array(
+	Array(
+		"Вход", 
+		"/personal/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Регистрация", 
+		"/registration/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Оплата", 
+		"/info/informatsiya-ob-oplate/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Доставка", 
+		"/info/informatsiya-o-dostavke/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"FAQ", 
+		"/info/chasto-zadavaemye-voprosy/", 
+		Array(), 
+		Array(), 
+		"" 
+	)
+);
+?>

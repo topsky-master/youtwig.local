@@ -1,0 +1,124 @@
+
+    .on_stock{
+        display: block;
+        width: 100%;
+        float: none;
+        clear: both;
+        text-align: center;
+    }
+
+    .bx_catalog_item_title,
+    .bx_catalog_item_price{
+        text-align: center;
+    }
+
+
+    html #pos-new-products .pagination li{
+        width: 48%;
+        margin: 0 1%;
+        display: inline-block;
+    }
+
+    #sort > label{
+        display: none;
+    }
+
+    #sort .selectpicker.btn-default{
+        max-width: 220px;
+        overflow: hidden;
+        margin: 0 auto;
+    }
+
+    #sort .bootstrap-select{
+        width: 220px!important;
+    }
+
+    #sort{
+        text-align: right;
+    }
+
+    .sort.pull-right{
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    html #pos-new-products .pagination li a{
+        text-align: center;
+        width: 100%;
+        -moz-border-radius: 4px;
+        -ms-border-radius: 4px;
+        -webkit-border-radius: 4px;
+        border-radius: 4px;
+
+    }
+
+    #linear .item-description{
+        padding-left: 0;
+        padding-right: 0;
+        border-right: none;
+    }
+
+    #linear .row{
+        border-bottom: none;
+    }
+
+    #mozaic .col-xs-12,
+    #linear .col-xs-12{
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .bx_catalog_item_images .img-responsive{
+        max-width: 253px;
+        width: auto;
+        margin: 0 auto;
+        display: block;
+        float: none;
+        border: 1px solid #ccc;
+        padding: 5px;
+        background: #fff;
+
+    }
+
+    .bx_catalog_list_home .bx_catalog_item_images_double,
+    .bx_catalog_list_home .bx_catalog_item_images{
+        background: none;
+        border: none;
+        text-align: center;
+    }
+
+    html #pos-new-products .pagination .pagination{
+        margin-bottom: 0!important;
+        padding-bottom: 0!important;
+    }
+
+    html .bx_catalog_list_home .form-button-area{
+        text-align: left!important;
+        padding: 0 15px;
+    }
+
+    html .bx_catalog_list_home .bx_catalog_item_price .bx_price{
+        text-align: right!important;
+        padding: 0 15px;
+    }
+
+    .bx_catalog_item_controls .form-button-area .btn.btn-info{
+        margin-left: 0;
+    }
+
+    html #mozaic .bx_catalog_item_title{
+        height: auto;
+    }
+
+    .bx_catalog_item_controls .form-button-area .btn.btn-info{
+        margin-left: -9px;
+    }
+
+    .pagination.row > div:first-child{
+        margin-bottom: 15px;
+    }
+
+    #linear > .row{
+        display: block;
+    }
+

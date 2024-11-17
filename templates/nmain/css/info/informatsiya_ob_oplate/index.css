@@ -1,0 +1,81 @@
+.payment-page {
+	text-align: left;
+}
+
+.payment-page .menu-right ul li,
+.payment-page .menu-right ul {
+	display: block;
+	padding: 0;
+	margin: 0;
+}
+
+.payment-page .coountry {
+	clear: both;
+	max-width: 600px;
+	margin: 40px auto;
+}
+
+.spb .coountry .left,
+.spb .coountry .right {
+	width: 35% !important;
+}
+.spb .coountry .name {
+	width: 30% !important;
+}
+.payment-page .coountry .left {
+	float: left;
+	width: 40%;
+	border-top: 1px solid black;
+	margin-top: 13px;
+}
+
+.payment-page .coountry .right {
+	float: left;
+	width: 40%;
+	border-top: 1px solid black;
+	margin-top: 13px;
+}
+
+.payment-page .coountry .name {
+	float: left;
+	width: 20%;
+	text-align: center;
+	font: normal bold 20px Arial;
+}
+
+.payment-page .col-md-2 {
+	text-align: center;
+}
+
+.payment-page .title {
+	font-size: 16px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+.payment-page .row {
+	margin-bottom: 55px;
+}
+
+.payment-page .info span {
+	display: block;
+	margin: 15px 0 15px 20px;
+	border-left: 2px solid #34b9dd;
+	padding-left: 10px;
+}
+
+.payment-page .menu-right ul li {
+	height: 40px;
+	background: #000000;
+	margin-bottom: 2px;
+}
+
+.payment-page .menu-right ul li a {
+	padding: 10px;
+	color: white;
+	display: block;
+}
+
+.payment-page .menu-right ul li a:hover {
+	text-decoration: none;
+}

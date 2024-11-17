@@ -1,0 +1,156 @@
+@media (min-width:1200px){
+
+
+    .table-order.table>tbody>tr>td.item{
+        padding-left: 90px;
+    }
+
+    .row.order-properties > .col-xs-12:not(.order_form_delivery) .cart-fields{
+        display: flex;
+        align-items: center;
+    }
+
+    .row.order-properties > .col-xs-12:not(.order_form_delivery) .cart-fields > label.col-lg-3{
+        margin: 0;
+    }
+
+    .order_form_delivery{
+        margin-top: 15px;
+        margin-bottom: 55px;
+    }
+
+    .delivery.order-properties + .alert{
+        top: -40px;
+    }
+
+    #order_form_content .order-properties .form-group{
+        margin-bottom: 0;
+    }
+
+    .row.itogo .col-xs-12{
+        font-size: 24px;
+    }
+
+    #ORDER_CONFIRM_BUTTON{
+        font-size: 24px;
+        line-height: 45px;
+        border-radius: 0;
+        font-weight: bold;
+        padding: 0 70px;
+        display: inline-block;
+    }
+
+}
+
+@media (max-width:980px){
+    .bx-touch .bx_ordercart .bx_sort_container span{display:block;}
+    .bx-touch .bx_ordercart .bx_sort_container a{margin:0 20px 10px 0;}
+    .bx_ordercart .bx_ordercart_order_table_container table thead td{font-size:13px;}
+    .bx_ordercart .bx_ordercart_order_table_container tbody td.custom,
+    .bx_ordercart .bx_ordercart_order_table_container .bx_ordercart_itemtitle a,
+    .bx_ordercart .bx_ordercart_order_table_container tbody td.price .current_price{font-size:14px;}
+}
+
+
+
+@media (max-width: 767px) {
+
+	.delivery.order-properties + .alert{
+		top: -15px;
+	}
+
+    .bx_order_make .bx_block.w100{
+        width: 100%;
+    }
+
+    .bx_order_make .bx_block.w100:first-child,
+    .bx_order_make .bx_block.w100:nth-child(2n+1){
+        border-right: none;
+    }
+
+    .bx_order_make .alert{
+        margin-top: 15px;
+    }
+
+    #order_form_div{
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .table.table-order th{
+        display: none!important;
+    }
+
+    .table.table-order td,
+    .table.table-order tr{
+        display: block!important;
+        width: 100%!important;
+    }
+
+    .table.table-order td{
+        text-align: center!important;
+        padding: 8px 0!important;
+        position: static;
+    }
+
+    .table.table-order tr{
+        position: relative;
+    }
+
+
+    #ORDER_FORM .actions .remove{
+        display: inline-block;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .order-properties .col-xs-12:not(.order_form_delivery) .col-lg-9{
+        padding-right: 0;
+    }
+
+    .order-properties .col-xs-12{
+        margin-bottom: 15px;
+    }
+
+    .sale-paysystem-wrapper{
+        margin: 15px 0 0 0!important;
+        padding-left: 15px!important;
+        padding-right: 15px!important;
+    }
+
+    .SMS_INFO.checkbox{
+        margin-top: 15px!important;
+    }
+
+
+    #ORDER_FORM .LOCATION.col-xs-12 .cart-fields{
+        padding-bottom: 0!important;
+    }
+
+
+}
+
+@media (max-width: 374px) {
+    html body.personal.pos_page .row.order-properties > .col-xs-12:not(.order_form_delivery) .cart-fields > label.col-lg-3 {
+        font-size: 12px;
+    }
+}
+
+
+@media (min-width: 768px) and (max-width: 1199px) {
+    .order-properties .col-xs-12:not(.order_form_delivery) .col-lg-9,
+    .order-properties .col-xs-12:not(.order_form_delivery) .col-lg-3{
+        padding-left: 0;
+    }
+
+    #ORDER_FORM .LOCATION.col-xs-12 .cart-fields{
+        padding-bottom: 0!important;
+    }
+
+    #order_form_content .top_background{
+        padding-top: 140px;
+        position: relative;
+    }
+}
+

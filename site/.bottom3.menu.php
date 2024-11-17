@@ -1,0 +1,39 @@
+<?
+$aMenuLinks = Array(
+	Array(
+		"Гарантия", 
+		"https://youtwig.ru/info/garantiya/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Обмен и возврат", 
+		"https://youtwig.ru/info/obmen-i-vozvrat/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Политика конфиденциальности", 
+		"https://youtwig.ru/info/politika-konfidintsialnosti/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Покупателям", 
+		"https://youtwig.ru/info/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Партнерам", 
+		"https://youtwig.ru/partners/", 
+		Array(), 
+		Array(), 
+		"" 
+	)
+);
+?>

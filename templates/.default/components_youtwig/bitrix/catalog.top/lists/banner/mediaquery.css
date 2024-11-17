@@ -1,0 +1,46 @@
+
+@media screen and (max-width: 1199px) {
+
+    .bx_catalog_item_controls .form-button-area .btn.btn-info{
+        margin-left: -9px;
+    }
+
+}
+
+
+@media screen and (max-width: 767px) {
+
+    .on_stock{
+        display: block;
+        width: 100%;
+        float: none;
+        clear: both;
+        text-align: center;
+    }
+
+    .bx_catalog_item_title,
+    .bx_catalog_item_price{
+        text-align: center;
+    }
+
+    .bx_catalog_item_images .img-responsive{
+        max-width: 253px;
+        width: auto;
+        margin: 0 auto;
+        display: block;
+        float: none;
+        border: 1px solid #ccc;
+        padding: 5px;
+        background: #fff;
+
+    }
+
+    .bx_catalog_list_top .bx_catalog_item_images_double,
+    .bx_catalog_list_top .bx_catalog_item_images{
+        background: none;
+        border: none;
+        text-align: center;
+    }
+
+
+}

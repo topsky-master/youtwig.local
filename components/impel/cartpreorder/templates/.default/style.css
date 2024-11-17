@@ -1,0 +1,17 @@
+.cart-picture{
+    margin-bottom: 15px;
+    height: 200px;
+    width: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+p.consent-processing{
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+#modalCart{
+	opacity: 0;
+}

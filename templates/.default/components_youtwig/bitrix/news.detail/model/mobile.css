@@ -1,0 +1,44 @@
+
+html body .bx-filter.horizontal .bx-filter-parameters-box{
+    height: auto!important;
+}
+
+html body .products-list-info .bx-filter.horizontal .col-lg-12{
+    padding-bottom: 15px!important;
+}
+
+html body .products-list-info .bx-filter.horizontal .btn.btn-more{
+    display: none!important;
+}
+
+
+html body .bx_catalog_item_images .img-responsive{
+	border: none!important;
+}
+
+@media screen and (min-width: 767px) {
+
+	html body div.about-model-area .indcode-list li a.active{
+		margin-left: 0!important;
+	}
+
+    html body .about-model-info.col-md-3.col-xs-12{
+        width: 33.33333%;
+    }
+
+    html body .about-model-info.col-md-3.col-xs-12{
+        text-align: center;
+    }
+
+    html body .products-list-info.col-md-9.col-xs-12{
+        width: calc(66.66666% - 15px);
+		padding-left: 15px;
+    }
+
+
+}
+
+html .row.title-row{
+    margin-top: 0!important;
+}
+

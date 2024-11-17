@@ -1,0 +1,31 @@
+.bx-auth-reg{
+    padding: 11px 15px;
+    border: 1px solid #E8E8E8;
+    border-radius: 4px;
+    background: #fff;
+    margin: 0 0 20px 0;
+
+}
+
+.bx-auth-reg table td:first-child{
+    padding-left: 0;
+}
+
+.bx-auth-reg table td .g-recaptcha{
+    margin-top: 8px;
+}
+
+.bx-auth-reg table td .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn){
+    width: 100%;
+}
+
+.bx-auth-reg table td{
+    padding: 8px;
+}
+
+.bx-auth-reg .btn{
+    max-width: 237px;
+}
+
+
+
