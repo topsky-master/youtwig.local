@@ -6,9 +6,9 @@
     display: none;
 }
 
-.quick-locations {
+/* .quick-locations {
     display:none;
-}
+} */
 
 .bx-soa-section {
     border-radius: 2px;
@@ -273,8 +273,6 @@
     background-size: contain;
 }
 
-.bx-soa-item-content {
-}
 .bx-soa-item-title {
     font-weight: var(--ui-font-weight-bold);
     padding-bottom: 5px;
@@ -579,8 +577,7 @@
     padding-top: 0;
     line-height: 20px;
 }
-.bx-soa-coupon-item {
-}
+
 .bx-soa-coupon-item strong:first-child {
     margin-left: 10px;
 }
@@ -923,8 +920,7 @@
 .bx-soa-item-content .bx-scu-container {
     max-width: 200px;
 }
-.bx-scu-block {
-}
+
 .bx-scu-list {
     margin: 0;
     padding: 0 5px;
@@ -1219,8 +1215,7 @@
     border: 1px solid #d5dadc;
     padding: 7px 15px;
 }
-.bx-soa-pp-company-logo {
-}
+
 input[type="checkbox"].bx-soa-pp-company-checkbox {
     display: none;
 }
@@ -1389,8 +1384,7 @@ ul.bx-soa-pp-list li {
     .bx-soa-pp-item-container {
         border-right: none;
     }
-    .bx-soa-pp-desc-container {
-    }
+    
     .bx-soa-pp-desc-container .bx-soa-pp-company-logo {
         width: 100%;
         padding-top: 0;
@@ -1407,13 +1401,38 @@ ul.bx-soa-pp-list li {
         }*/
 }
 
-@media only screen and (-webkit-min-device-pixel-ratio: 2),
-    @media only screen and (min--moz-device-pixel-ratio: 2),
-    @media only screen and (-moz-min-device-pixel-ratio: 2),
-    @media only screen and (-o-min-device-pixel-ratio: 2/1),
-    @media only screen and (min-device-pixel-ratio: 2),
-    @media only screen and (min-resolution: 192dpi),
-    @media only screen and (min-resolution: 2dppx) {
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+    .bx-soa-location-input-container {
+        border-width: 0.5px;
+    }
+}
+@media only screen and (min--moz-device-pixel-ratio: 2) {
+    .bx-soa-location-input-container {
+        border-width: 0.5px;
+    }
+}
+@media only screen and (-moz-min-device-pixel-ratio: 2) {
+    .bx-soa-location-input-container {
+        border-width: 0.5px;
+    }
+}
+@media only screen and (-o-min-device-pixel-ratio: 2/1) {
+    .bx-soa-location-input-container {
+        border-width: 0.5px;
+    }
+
+}
+@media only screen and (min-device-pixel-ratio: 2) {
+    .bx-soa-location-input-container {
+        border-width: 0.5px;
+    }
+}
+@media only screen and (min-resolution: 192dpi){
+    .bx-soa-location-input-container {
+        border-width: 0.5px;
+    }
+}
+@media only screen and (min-resolution: 2dppx) {
     .bx-soa-location-input-container {
         border-width: 0.5px;
     }

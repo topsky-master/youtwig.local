@@ -81,89 +81,93 @@ class impelCheckZipProps{
 
         //$addresses $code2sab
 
-        while($aString = fgetcsv($pfOpen,0, ';')){
+        if($pfOpen != null) { 
+            while($aString = fgetcsv($pfOpen,0, ';')){
 
-            $aString = array_map('trim',$aString);
-            ++$iStrings;
+                $aString = array_map('trim',$aString);
+                ++$iStrings;
 
-            $skip = ftell($pfOpen);
-            file_put_contents(dirname(dirname(__DIR__)).'/bitrix/tmp/check_zip_props_last.txt', $skip);
+                $skip = ftell($pfOpen);
+                file_put_contents(dirname(dirname(__DIR__)).'/bitrix/tmp/check_zip_props_last.txt', $skip);
 
-            //if(static::$countStrings < $iStrings)
-            //break;
+                //if(static::$countStrings < $iStrings)
+                //break;
 
-            if(empty($aString[3])
-                || !in_array($aString[2],array('STREET','CITY','VILLAGE')))
-                continue;
+                if(empty($aString[3])
+                    || !in_array($aString[2],array('STREET','CITY','VILLAGE')))
+                    continue;
 
-            $locName = $aString[0];
+                $locName = $aString[0];
 
-            $aCsvLocParents = static::getParentsCsv($aString[1],$addresses,$code2sab);
+                $aCsvLocParents = static::getParentsCsv($aString[1],$addresses,$code2sab);
 
-            $bCsvStreetExists = array_search('STREET',$aCsvLocParents);
-            $bCsvVillageExists = array_search('VILLAGE',$aCsvLocParents);
-            $bCsvCityExists = array_search('CITY',$aCsvLocParents);
+                $bCsvStreetExists = array_search('STREET',$aCsvLocParents);
+                $bCsvVillageExists = array_search('VILLAGE',$aCsvLocParents);
+                $bCsvCityExists = array_search('CITY',$aCsvLocParents);
 
-            if($bCsvStreetExists !== false
-                && $bCsvVillageExists === false
-                && $bCsvCityExists === false)
-                continue;
+                if($bCsvStreetExists !== false
+                    && $bCsvVillageExists === false
+                    && $bCsvCityExists === false)
+                    continue;
 
-            usleep(200);
+                usleep(200);
 
-            $aLocs = static::searchLocation($locName,array($aString[2]),$aString[3]);
+                $aLocs = static::searchLocation($locName,array($aString[2]),$aString[3]);
 
-            if(!empty($aLocs)){
+                if(!empty($aLocs)){
 
-                if(!empty($aCsvLocParents)){
+                    if(!empty($aCsvLocParents)){
 
-                    foreach($aLocs as $aLoc){
-                        $aLocParents = array();
-                        static::getParentLeaf($aLoc['ID'],$aLocParents);
+                        foreach($aLocs as $aLoc){
+                            $aLocParents = array();
+                            static::getParentLeaf($aLoc['ID'],$aLocParents);
 
-                        if(!empty($aLocParents)){
+                            if(!empty($aLocParents)){
 
-                            $anyFound = false;
+                                $anyFound = false;
 
-                            foreach($aCsvLocParents as $acName => $acTypeid){
+                                foreach($aCsvLocParents as $acName => $acTypeid){
 
-                                $acLocName = array_search($acTypeid,$aLocParents);
-                                $bVillageExists = array_search('VILLAGE',$aLocParents);
+                                    $acLocName = array_search($acTypeid,$aLocParents);
+                                    $bVillageExists = array_search('VILLAGE',$aLocParents);
 
-                                if($bCsvStreetExists !== false
-                                    && $bCsvVillageExists === false
-                                    && $bVillageExists !== false){
+                                    if($bCsvStreetExists !== false
+                                        && $bCsvVillageExists === false
+                                        && $bVillageExists !== false){
 
-                                    $anyFound = false;
-                                    break;
-                                }
-
-                                if($acLocName !== false){
-
-                                    if(mb_stripos($acLocName,$acName) !== false){
-                                        $anyFound = true;
-                                    } else {
                                         $anyFound = false;
                                         break;
                                     }
 
-                                } else {
+                                    if($acLocName !== false){
 
-                                    $anyFound = false;
-                                    break;
+                                        if(mb_stripos($acLocName,$acName) !== false){
+                                            $anyFound = true;
+                                        } else {
+                                            $anyFound = false;
+                                            break;
+                                        }
+
+                                    } else {
+
+                                        $anyFound = false;
+                                        break;
+
+                                    }
+                                }
+
+                                if($anyFound){
+
+                                    $locFullName = Bitrix\Sale\Location\Admin\LocationHelper::getLocationPathDisplay($aLoc['CODE']);
+
+                                    $locFullNameKladr = join(', ',array_keys($aCsvLocParents));
+                                    fputcsv($fp,array($aLoc['ID'],$locFullName,$aLoc['ZIP'],$locFullNameKladr,$aString[3],$aString[4],$aString[5],$aString[6]),';');
 
                                 }
-                            }
 
-                            if($anyFound){
 
-                                $locFullName = Bitrix\Sale\Location\Admin\LocationHelper::getLocationPathDisplay($aLoc['CODE']);
-
-                                $locFullNameKladr = join(', ',array_keys($aCsvLocParents));
-                                fputcsv($fp,array($aLoc['ID'],$locFullName,$aLoc['ZIP'],$locFullNameKladr,$aString[3],$aString[4],$aString[5],$aString[6]),';');
 
                             }
-
 
 
                         }
@@ -173,17 +177,11 @@ class impelCheckZipProps{
 
 
                 }
-
-
             }
-
-
-
-
-        }
-
-        $skip = ftell($pfOpen);
-        fclose($pfOpen);
+                
+            $skip = ftell($pfOpen);
+            fclose($pfOpen);
+        }     
 
         return $iStrings ? $skip : 0;
 
