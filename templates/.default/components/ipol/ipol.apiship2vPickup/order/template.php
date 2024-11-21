@@ -555,6 +555,21 @@ var IPOLapiship_pvz = {
 
             return result;
         }
+        
+        const getProviderNameByKey = (key) => {
+            switch(key) {
+                case 'cdek':
+                    return 'СДЭК';
+                case 'yataxi':
+                    return 'Яндекс.Доставка';
+                case "x5":
+                    return '5Post';
+                case 'boxberry':
+                    return 'Boxberry';
+                default:
+                    return '';
+            }
+        }
 
         const providerCounts = getProviderCounts();
 
@@ -576,7 +591,8 @@ var IPOLapiship_pvz = {
             let selectBoxContent = `<option value="total"><span style="text-align:Left">Все службы  </span><span style="text-align:Right">(${totalCount})</span></option>`;
             
             Object.keys(providerCounts).forEach(key => {
-                selectBoxContent +=`<option value="${key}"><span style="text-align:Left">${key}  </span><span style="text-align:Right">(${providerCounts[key]})</span></option>`;
+                let name = getProviderNameByKey(key);
+                selectBoxContent +=`<option value="${key}"><span style="text-align:Left">${name}  </span><span style="text-align:Right">(${providerCounts[key]})</span></option>`;
             });
 
             selectBoxContent = `<select id="items" name="points" class="pvz-header-block__select-list" onChange="IPOLapiship_pvz.selectChangeHandler(this)">${selectBoxContent}</select>`;
@@ -611,7 +627,8 @@ var IPOLapiship_pvz = {
             let selectBoxContent = `<option value="total"><span style="text-align:Left">Все службы  </span><span style="text-align:Right">(${totalCount})</span></option>`;
             
             Object.keys(providerCounts).forEach(key => {
-                selectBoxContent +=`<option value="${key}"><span style="text-align:Left">${key}  </span><span style="text-align:Right">(${providerCounts[key]})</span></option>`;
+                let name = getProviderNameByKey(key);
+                selectBoxContent +=`<option value="${key}"><span style="text-align:Left">${name}  </span><span style="text-align:Right">(${providerCounts[key]})</span></option>`;
             });
 
             selectBoxContent = `<select id="items" name="points" class="pvz-header-block__select-list" onChange="IPOLapiship_pvz.selectChangeHandler(this)">${selectBoxContent}</select>`;

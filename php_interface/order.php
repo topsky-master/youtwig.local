@@ -3314,20 +3314,24 @@ function changeSaleProperties($event){
                 ? array(current($deliveryIds))
                 : $deliveryIds;
                                 
-// file_put_contents(__DIR__.'/info.log','');
+file_put_contents(__DIR__.'/info.log','333');
 
             $providerCodeKey = 75; // shipping provider code
             $currentProp = $propertyCollection->getItemByOrderPropertyId($providerCodeKey);
-            $providerCode = $currentProp->getValue();
+            if($currentProp != null) {          
+                $providerCode = $currentProp->getValue();
+            }
 
             if(empty($providerCode)) {
                 $providerCodeKey = 143; // shipping provider code
                 $currentProp = $propertyCollection->getItemByOrderPropertyId($providerCodeKey);
-                $providerCode = $currentProp->getValue();
+                if($currentProp != null) {        
+                    $providerCode = $currentProp->getValue();
+                }
             }
 
-// file_put_contents(__DIR__.'/info.log','providerCode = ', FILE_APPEND);
-// file_put_contents(__DIR__.'/info.log',var_export($providerCode,true), FILE_APPEND);
+file_put_contents(__DIR__.'/info.log','chained = ', FILE_APPEND);
+file_put_contents(__DIR__.'/info.log', var_export($chained, true), FILE_APPEND);
 
             if (isset($chained['deliveries'])) {
 

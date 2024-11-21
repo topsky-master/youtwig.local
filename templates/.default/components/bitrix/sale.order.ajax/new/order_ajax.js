@@ -6090,6 +6090,8 @@ BX.namespace('BX.Sale.OrderAjaxComponent');
                 }
             }
 
+            
+
             if (this.propsBlockNode.getAttribute('data-visited') === 'true') {
                 validPropsErrors = this.isValidPropertiesBlock();
                 if (validPropsErrors.length)
@@ -6152,6 +6154,7 @@ BX.namespace('BX.Sale.OrderAjaxComponent');
 				if (propertyDesc.length && propertyType != 'STRING' && propertyType != 'NUMBER' && propertyType != 'DATE')
 					textHtml += ' <small>(' + BX.util.htmlspecialchars(propertyDesc) + ')</small>';
 		
+
 				label = BX.create('LABEL', {
 					attrs: {'for': 'soa-property-' + property.getId()},
 					props: {className: 'bx-soa-custom-label'},
