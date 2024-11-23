@@ -15,6 +15,136 @@ use Bitrix\Main\Localization\Loc;
 $context = Main\Application::getInstance()->getContext();
 $request = $context->getRequest();
 
+if (!class_exists('impelDeliveryIntervalExceed')) {
+
+	class impelDeliveryIntervalExceed extends impelDeliveryInterval
+	{
+			private static $aTimeIntervals = [];
+
+			public static function getIntervalsExceed()
+			{
+
+					$aTimeInterval = unserialize(\Bitrix\Main\Config\Option::get("my.stat", "references_timeintervals", array()));
+					$aTimeIntervalMax = [];
+					$iMaxCount = 0;
+
+					if(isset($aTimeInterval['counts'])) {
+							foreach ($aTimeInterval['counts'] as $iTime => $iValue) {
+									if (isset($aTimeInterval['times'][$iTime])) {
+											$aTimeIntervalMax[$aTimeInterval['times'][$iTime]] = $iValue;
+									}
+									$iMaxCount += $iValue;
+							}
+					}
+
+					$days = parent::deliveryDaysInterval();
+					$timeInterval = parent::getTimeInterval();
+
+					if($iMaxCount > 0) {
+							foreach ($days as $cNum => $cDay) {
+									$iCount = 0;
+
+									foreach ($timeInterval as $tText => $tValue) {
+											$iCurrent = static::getCountByDay($cDay, $tValue);
+
+											if($iCurrent < $aTimeIntervalMax[$tValue]) {
+													static::$aTimeIntervals[$cDay] .=
+															(isset(static::$aTimeIntervals[$cDay]) && !empty(static::$aTimeIntervals[$cDay])
+																	? ',': '') .$tValue;
+											}
+
+											$iCount += $iCurrent;
+									}
+
+									if ($iMaxCount <= $iCount) {
+											unset($days[$cNum]);
+									}
+							}
+					}
+
+					return $days;
+			}
+
+			public static function getcTimeIntervals() {
+					return static::$aTimeIntervals;
+			}
+
+			public static function getCountByDay($cDay, $cTime)
+			{
+					global $DB;
+
+					$sSql = 'SELECT COUNT(id) as count FROM b_intervals WHERE date = \'' . $DB->ForSql($cDay) . '\' and intervaluse	= \'' . $DB->ForSql($cTime) . '\'';
+
+					$rDb = $DB->Query($sSql);
+
+					$iCount = 0;
+
+					if ($rDb && $aDb = $rDb->fetch()) {
+							$iCount = $aDb['count'];
+					}
+
+					return $iCount;
+
+			}
+	}
+
+	if (!function_exists('properties_usort')) {
+			function properties_usort($a, $b)
+			{
+					if ($a['SORT'] == $b['SORT']) {
+							return 0;
+					}
+					return ($a['SORT'] < $b['SORT']) ? -1 : 1;
+			}
+	}
+
+	if (!function_exists("showFilePropertyField")) {
+			function showFilePropertyField($name, $property_fields, $values, $max_file_size_show = 50000)
+			{
+					$res = "";
+
+					if (!is_array($values) || empty($values))
+							$values = array(
+									"n0" => 0,
+							);
+
+					if ($property_fields["MULTIPLE"] == "N") {
+							$res = "<label for=\"\"><input type=\"file\" size=\"" . $max_file_size_show . "\" value=\"" . $property_fields["VALUE"] . "\" name=\"" . $name . "[0]\" id=\"" . $name . "[0]\" class=\"has_tooltip\"></label>";
+					} else {
+							$res = '
+							<script type="text/javascript">
+									function addControl(item)
+									{
+											var current_name = item.id.mb_split("[")[0],
+													current_id = item.id.mb_split("[")[1].replace("[", "").replace("]", ""),
+													next_id = parseInt(current_id) + 1;
+
+											var newInput = document.createElement("input");
+											newInput.type = "file";
+											newInput.name = current_name + "[" + next_id + "]";
+											newInput.id = current_name + "[" + next_id + "]";
+											newInput.onchange = function() { addControl(this); };
+											var br = document.createElement("br");
+											var br2 = document.createElement("br");
+
+											BX(item.id).parentNode.appendChild(br);
+											BX(item.id).parentNode.appendChild(br2);
+											BX(item.id).parentNode.appendChild(newInput);
+									}
+							</script>
+							';
+
+							$res .= "<label for=\"\"><input type=\"file\" size=\"" . $max_file_size_show . "\" value=\"" . $property_fields["VALUE"] . "\" name=\"" . $name . "[0]\" id=\"" . $name . "[0]\" class=\"has_tooltip\" /></label>";
+							$res .= "<br/><br/>";
+							$res .= "<label for=\"\"><input type=\"file\" size=\"" . $max_file_size_show . "\" value=\"" . $property_fields["VALUE"] . "\" name=\"" . $name . "[1]\" id=\"" . $name . "[1]\" onChange=\"javascript:addControl(this);\"></label>";
+					}
+
+					return $res;
+			}
+	}
+
+}
+
 if (empty($arParams['TEMPLATE_THEME']))
 {
 	$arParams['TEMPLATE_THEME'] = Main\ModuleManager::isModuleInstalled('bitrix.eshop') ? 'site' : 'blue';
@@ -578,6 +708,12 @@ else
 	$signedParams = $signer->sign(base64_encode(serialize($arParams)), 'sale.order.ajax');
 	$messages = Loc::loadLanguageFile(__FILE__);
 	?>
+
+	<?
+	$days = impelDeliveryIntervalExceed::getIntervalsExceed();
+	$daysInterval = impelDeliveryIntervalExceed::getcTimeIntervals();
+	$timeInterval = impelDeliveryInterval::getTimeInterval();
+	?>
 	<script>
 		BX.message(<?=CUtil::PhpToJSObject($messages)?>);
 		BX.Sale.OrderAjaxComponent.init({
@@ -588,6 +724,11 @@ else
 			siteID: '<?=CUtil::JSEscape($component->getSiteId())?>',
 			ajaxUrl: '<?=CUtil::JSEscape($component->getPath().'/ajax.php')?>',
 			templateFolder: '<?=CUtil::JSEscape($templateFolder)?>',
+
+			days: <?=CUtil::PhpToJSObject($days)?>,
+			daysInterval: <?=CUtil::PhpToJSObject($daysInterval)?>,
+			timeInterval: <?=CUtil::PhpToJSObject($timeInterval)?>,
+
 			propertyValidation: false,
 			showWarnings: true,
 			pickUpMap: {

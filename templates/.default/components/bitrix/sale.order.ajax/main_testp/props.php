@@ -70,8 +70,13 @@ include($_SERVER["DOCUMENT_ROOT"].$templateFolder."/props_format.php");
 	?>
 </div>
 <?
-		$ORDER_PROPS 			= array_merge($arResult["ORDER_PROP"]["USER_PROPS_N"],$arResult["ORDER_PROP"]["USER_PROPS_Y"]);
-		usort($ORDER_PROPS,"properties_usort");
+if(is_array($arResult["ORDER_PROP"]["USER_PROPS_N"]) && is_array($arResult["ORDER_PROP"]["USER_PROPS_Y"])){
+	$ORDER_PROPS 			= array_merge($arResult["ORDER_PROP"]["USER_PROPS_N"],$arResult["ORDER_PROP"]["USER_PROPS_Y"]);
+}
+
+if(is_array($ORDER_PROPS)) {
+	usort($ORDER_PROPS,"properties_usort");
+}
 		PrintPropsForm($ORDER_PROPS, $arParams["TEMPLATE_LOCATION"],$counter,$arResult,$relatedProperties,$delivery_name,$paysystem_name);
 ?>
 <?if(!CSaleLocation::isLocationProEnabled()):?>

@@ -824,7 +824,7 @@ if (!function_exists("PrintPropsForm")) {
                                             $daysInterval = impelDeliveryIntervalExceed::getcTimeIntervals();
 
                                             ?>
-                                            <select class="selectpicker form-control has_tooltip123"
+                                            <select class="selectpicker form-control has_tooltip"
                                                     name="<?= $arProperties["FIELD_NAME"] ?>"
                                                     id="<?= $arProperties["FIELD_NAME"] ?>">
                                                 <option value=""><?= GetMessage('SOA_DAYOFDELIVERY'); ?></option>

@@ -363,8 +363,6 @@ function setDeviceInfo($propertyCollection){
         $addrPropValue->save();
 
     }
-
-
 }
 
 function parseYDDayAndTime($propertyCollection,$order){
@@ -373,14 +371,19 @@ function parseYDDayAndTime($propertyCollection,$order){
     $sTimeFrom = '';
     $sTimeTo = '';
 
-    $todPropertyId = getPropertyIdByCode($propertyCollection, 'YD_TIME');
+    $todPropertyId = getPropertyIdByCode($propertyCollection, 'TIMEOFDELIVERY');
 
     $oTodPropValue = $propertyCollection->getItemByOrderPropertyId($todPropertyId);
 
     if ($oTodPropValue) {
 
         $sTimeValue = $oTodPropValue->getValue();
-        preg_match('~c\s+([^\s]+)\s+по\s+([^\s]+)~isu',$sTimeValue,$aTime);
+
+        file_put_contents(__DIR__.'/info.log', 'sTimeValue = ');
+        file_put_contents(__DIR__.'/info.log', var_export($sTimeValue, true), FILE_APPEND);
+
+        // preg_match('~c\s+([^\s]+)\s+по\s+([^\s]+)~isu',$sTimeValue,$aTime);
+        preg_match('~(\d+)\s*-\s*(\d+)~', $sTimeValue, $aTime);
 
         if(isset($aTime[1])) {
             $sTimeFrom = $aTime[1];
@@ -393,6 +396,9 @@ function parseYDDayAndTime($propertyCollection,$order){
         }
 
     }
+    
+    file_put_contents(__DIR__.'/info.log', 'sTimeFrom = ', FILE_APPEND);
+    file_put_contents(__DIR__.'/info.log', var_export($sTimeFrom, true), FILE_APPEND);
 
     if (is_numeric($sTimeFrom)) {
 
@@ -408,6 +414,9 @@ function parseYDDayAndTime($propertyCollection,$order){
 
         }
     }
+    
+    file_put_contents(__DIR__.'/info.log', 'sTimeTo = ', FILE_APPEND);
+    file_put_contents(__DIR__.'/info.log', var_export($sTimeTo, true), FILE_APPEND);
 
     if (is_numeric($sTimeTo)) {
         $dodPropertyId = getPropertyIdByCode($propertyCollection, 'TIMEOFDELIVERYTO');
@@ -426,13 +435,17 @@ function parseYDDayAndTime($propertyCollection,$order){
 
     $sDayValue = '';
 
-    $todPropertyId = getPropertyIdByCode($propertyCollection, 'YD_DAYS');
+    $todPropertyId = getPropertyIdByCode($propertyCollection, 'DAYOFDELIVERY');
 
     $oTodPropValue = $propertyCollection->getItemByOrderPropertyId($todPropertyId);
 
     if ($oTodPropValue) {
 
         $sDayValue = mb_strtolower($oTodPropValue->getValue());
+      
+    
+    file_put_contents(__DIR__.'/info.log', 'sDayValue = ', FILE_APPEND);
+    file_put_contents(__DIR__.'/info.log', var_export($sDayValue, true), FILE_APPEND);
 
         if (!empty($sDayValue)) {
 
@@ -483,6 +496,7 @@ function parseYDDayAndTime($propertyCollection,$order){
 }
 
 function setFullAddressProperty($propertyCollection,$order){
+
 
     global $APPLICATION;
 
@@ -796,11 +810,10 @@ function setFullAddressProperty($propertyCollection,$order){
             }
 
         }
+    } 
 
-        parseYDDayAndTime($propertyCollection,$order);
-
-
-    }
+    parseYDDayAndTime($propertyCollection,$order);
+    
 
 }
 
@@ -1452,6 +1465,8 @@ function OnSaleOrderSavedHandler(\Bitrix\Main\Event $event){
             }
 
             $propertyCollection = $order->getPropertyCollection();
+    
+           
 
             if($propertyCollection){
 
@@ -3314,8 +3329,6 @@ function changeSaleProperties($event){
                 ? array(current($deliveryIds))
                 : $deliveryIds;
                                 
-file_put_contents(__DIR__.'/info.log','333');
-
             $providerCodeKey = 75; // shipping provider code
             $currentProp = $propertyCollection->getItemByOrderPropertyId($providerCodeKey);
             if($currentProp != null) {          
@@ -3329,9 +3342,6 @@ file_put_contents(__DIR__.'/info.log','333');
                     $providerCode = $currentProp->getValue();
                 }
             }
-
-file_put_contents(__DIR__.'/info.log','chained = ', FILE_APPEND);
-file_put_contents(__DIR__.'/info.log', var_export($chained, true), FILE_APPEND);
 
             if (isset($chained['deliveries'])) {
 
@@ -3351,9 +3361,6 @@ file_put_contents(__DIR__.'/info.log', var_export($chained, true), FILE_APPEND);
                             && is_array($chained['prop'])
                             && !empty($chained['prop'])) || empty($paymentID)) {    
                                 $providerPropValue = $chained['prop'][145];
-                
-// file_put_contents(__DIR__.'/info.log','providerPropValue = ', FILE_APPEND);
-// file_put_contents(__DIR__.'/info.log',var_export($providerPropValue[$number],true), FILE_APPEND);
                                 
                                 if($currentProp && $providerCode != "" && $providerPropValue[$number] != "" && $providerCode != $providerPropValue[$number]) {
                                     continue;

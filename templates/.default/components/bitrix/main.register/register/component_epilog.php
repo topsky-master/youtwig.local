@@ -4,7 +4,7 @@
 use Bitrix\Main\Loader;
 global $APPLICATION;
 
-if(change_to_mobile){
+if(defined('change_to_mobile') ){
     $APPLICATION->SetAdditionalCSS($templateFolder.'/mobile.css');
 } else {
     $APPLICATION->SetAdditionalCSS($templateFolder.'/mediaquery.css');
